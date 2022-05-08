@@ -1,4 +1,5 @@
-const { Achievement, sequelize } = require('./models')
+const { Achievement, User, sequelize } = require('./models')
+const user = require('./models/user')
 // const { Op } = require('sequelize')
 
 const stringify = (data) => {
@@ -14,9 +15,18 @@ const findCharAchievements = async () => {
   stringify(achievements)
 }
 
+const deleteUser = async () => {
+  let user = await User.destroy({
+    where: {
+      password: null
+    }
+  })
+  stringify(user)
+}
+
 async function main() {
   try {
-    await findCharAchievements()
+    await deleteUser()
   } catch (error) {
     console.log(error)
   } finally {
