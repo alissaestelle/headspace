@@ -19,6 +19,7 @@ function App() {
     password: ''
   })
 
+  let [registerSuccess, setSuccess] = useState(false)
   let [payload, setPayload] = useState(null)
   let [auth, toggleAuth] = useState(false)
 
@@ -48,6 +49,8 @@ function App() {
               <Auth
                 newUser={registration}
                 setRegistration={setRegistration}
+                success={registerSuccess}
+                setSuccess={setSuccess}
                 returnUser={login}
                 setLogin={setLogin}
                 setPayload={setPayload}

@@ -4,6 +4,8 @@ import { LoginRequest, RegisterRequest } from '../services/AuthStorage'
 const Auth = ({
   newUser,
   setRegistration,
+  success,
+  setSuccess,
   returnUser,
   setLogin,
   setPayload,
@@ -18,6 +20,7 @@ const Auth = ({
   const submitRegister = async (e) => {
     e.preventDefault()
     await RegisterRequest(newUser)
+    setSuccess(true)
     setRegistration({
       firstName: '',
       lastName: '',
@@ -66,40 +69,46 @@ const Auth = ({
           <button>Submit</button>
         </form>
       </div>
-      <div>
-        <h3>New User</h3>
-        <form onSubmit={submitRegister}>
-          <input
-            required
-            placeholder="First Name"
-            name="firstName"
-            value={newUser.firstName}
-            onChange={handleRegister}
-          ></input>
-          <input
-            required
-            placeholder="Last Name"
-            name="lastName"
-            value={newUser.lastName}
-            onChange={handleRegister}
-          ></input>
-          <input
-            required
-            placeholder="Username"
-            name="username"
-            value={newUser.username}
-            onChange={handleRegister}
-          ></input>
-          <input
-            required
-            placeholder="Password"
-            name="password"
-            value={newUser.password}
-            onChange={handleRegister}
-          ></input>
-          <button>Submit</button>
-        </form>
-      </div>
+      {success ? (
+        <div>
+          <h3>Registration Complete. Please Log In.</h3>
+        </div>
+      ) : (
+        <div>
+          <h3>New User</h3>
+          <form onSubmit={submitRegister}>
+            <input
+              required
+              placeholder="First Name"
+              name="firstName"
+              value={newUser.firstName}
+              onChange={handleRegister}
+            ></input>
+            <input
+              required
+              placeholder="Last Name"
+              name="lastName"
+              value={newUser.lastName}
+              onChange={handleRegister}
+            ></input>
+            <input
+              required
+              placeholder="Username"
+              name="username"
+              value={newUser.username}
+              onChange={handleRegister}
+            ></input>
+            <input
+              required
+              placeholder="Password"
+              name="password"
+              value={newUser.password}
+              onChange={handleRegister}
+            ></input>
+            <button>Submit</button>
+          </form>
+        </div>
+      )}
     </div>
   )
 }
