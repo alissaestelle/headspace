@@ -18,14 +18,12 @@ const Auth = ({
   const submitRegister = async (e) => {
     e.preventDefault()
     await RegisterRequest(newUser)
-    console.log(newUser)
     setRegistration({
       firstName: '',
       lastName: '',
       username: '',
       password: ''
     })
-    console.log('User Successfully Created')
   }
 
   const handleLogin = (e) => {
@@ -35,6 +33,7 @@ const Auth = ({
   const submitLogin = async (e) => {
     e.preventDefault()
     const credentials = await LoginRequest(returnUser)
+    console.log(credentials)
     setPayload(credentials)
     toggleAuth(true)
     setLogin({

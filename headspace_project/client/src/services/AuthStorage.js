@@ -13,6 +13,7 @@ export const LoginRequest = async (data) => {
   try {
     const res = await Client.post('/auth/login', data)
     localStorage.setItem('token', res.data.token)
+    console.log(res.data.user)
     return res.data.user
   } catch (e) {
     throw e
