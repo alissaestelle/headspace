@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
   <div>
-    <h1>This is the Nav Bar!</h1>
+    <h1>Nav Bar</h1>
   </div>
   )
 }

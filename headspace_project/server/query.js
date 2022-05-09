@@ -18,7 +18,7 @@ const findCharAchievements = async () => {
 const deleteUser = async () => {
   let user = await User.destroy({
     where: {
-      password: null
+      username: 'solaur_halo'
     }
   })
   stringify(user)
