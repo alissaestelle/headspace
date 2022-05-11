@@ -28,15 +28,6 @@ export const CharRequest = async (data) => {
   }
 }
 
-export const GetChar = async (data) => {
-  try {
-    const res = await Client.get('/account/character')
-    return res.data
-  } catch (e) {
-    throw e
-  }
-}
-
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')

@@ -9,8 +9,8 @@
 
 .Main {
   height: 100vh;
-  background-image: url('file:///Users/alissaestelle/Downloads/Sherbet%20Sky.svg');
-  background-size: cover;
+  background-image: url('/Users/alissaestelle/Desktop/Sherbet Sky.svg');
+  background-size: 100%;
 }
 
 .Nav {
