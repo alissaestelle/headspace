@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { CheckSession } from './services/AuthStorage'
+import { CheckSession } from './services/Requests'
 import NavBar from './components/NavBar'
 import Auth from './pages/Auth'
 import Main from './pages/Main'
@@ -19,13 +19,15 @@ function App() {
     password: ''
   })
 
-  let [registerSuccess, setSuccess] = useState(false)
-  let [payload, setPayload] = useState(null)
+  let [successful, setSuccess] = useState(false)
+  let [payload, setPayload] = useState({})
   let [auth, toggleAuth] = useState(false)
+  let [user, setUser] = useState({})
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
-    setPayload(userInfo)
+    setUser(userInfo)
+    console.log(userInfo)
     toggleAuth(true)
   }
 
@@ -36,11 +38,15 @@ function App() {
     }
   }, [])
 
+  const handleLogOut = () => {
+    setUser({})
+    console.log(user)
+    localStorage.clear()
+  }
+
   return (
     <div className="App">
-      <header className="App-Header">
-        <NavBar />
-      </header>
+      <NavBar logout={handleLogOut} />
       <main>
         <Routes>
           <Route
@@ -49,7 +55,7 @@ function App() {
               <Auth
                 newUser={registration}
                 setRegistration={setRegistration}
-                success={registerSuccess}
+                success={successful}
                 setSuccess={setSuccess}
                 returnUser={login}
                 setLogin={setLogin}
@@ -58,7 +64,18 @@ function App() {
               />
             }
           />
-          <Route path="/home" element={<Main />} />
+          <Route
+            path="/main"
+            element={
+              <Main
+                user={user}
+                setUser={setUser}
+                payload={payload}
+                success={successful}
+                setSuccess={setSuccess}
+              />
+            }
+          />
         </Routes>
       </main>
     </div>

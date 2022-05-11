@@ -45,8 +45,10 @@ const Login = async (req, res) => {
   }
 }
 
+// Look into CheckSession Logic
 const CheckSession = async (req, res) => {
   const { payload } = res.locals
+  console.log(payload)
   res.send(payload)
 }
 

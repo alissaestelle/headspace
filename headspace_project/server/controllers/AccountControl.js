@@ -3,7 +3,25 @@ const middleware = require('../middleware')
 
 const CreateCharacter = async (req, res) => {
   try {
+    await User.findOne({
+      where: {
+        id: req.body.userID
+      }
+    })
     let character = await Character.create({ ...req.body })
+    res.send(character)
+  } catch (e) {
+    throw e
+  }
+}
+
+const GetCharacter = async (req, res) => {
+  try {
+    let character = await Character.findOne({
+      where: {
+        userID: req.params.userID
+      }
+    })
     res.send(character)
   } catch (e) {
     throw e
@@ -45,6 +63,7 @@ const DeleteUser = async (req, res) => {
 
 module.exports = {
   CreateCharacter,
+  GetCharacter,
   UpdatePassword,
   DeleteUser
 }

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { LoginRequest, RegisterRequest } from '../services/AuthStorage'
+import { LoginRequest, RegisterRequest } from '../services/Requests'
 
 const Auth = ({
   newUser,
@@ -27,6 +27,7 @@ const Auth = ({
       username: '',
       password: ''
     })
+    navigate('/')
   }
 
   const handleLogin = (e) => {
@@ -36,15 +37,11 @@ const Auth = ({
   const submitLogin = async (e) => {
     e.preventDefault()
     const credentials = await LoginRequest(returnUser)
-    console.log(credentials)
     setPayload(credentials)
+    console.log(credentials)
     toggleAuth(true)
-    setLogin({
-      username: '',
-      password: ''
-    })
-    navigate('/home')
-    console.log('Successful Login')
+    setSuccess(true)
+    navigate('/main')
   }
 
   return (

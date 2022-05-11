@@ -6,3 +6,65 @@
 .Login input {
   display: block;
 }
+
+.Main {
+  height: 100vh;
+  background-image: url('file:///Users/alissaestelle/Downloads/Sherbet%20Sky.svg');
+  background-size: cover;
+}
+
+.Nav {
+  height: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 5px;
+  text-align: center;
+  background-color: aquamarine;
+
+}
+
+.Char-Container {
+  width: 450px;
+  height: 250px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.25fr 1fr;
+}
+
+.Char-Container h1 {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.Char-Container form {
+  text-align: center;
+}
+
+#Girl {
+  width: 250px;
+  height: 275px
+}
+
+#Boy {
+  width: 200px;
+  height: 200px
+}
+
+.Fem-Container {
+  padding-top: 5%;
+  width: 250px;
+  height: 300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.Fem-Char {
+  width: 250px;
+}
