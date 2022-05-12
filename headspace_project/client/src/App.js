@@ -32,6 +32,7 @@ function App() {
     toggleAuth(true)
   }
 
+  const charID = localStorage.getItem('charID')
   const charName = localStorage.getItem('charName')
   const avatar = localStorage.getItem('avatar')
 
@@ -44,14 +45,13 @@ function App() {
 
   const handleLogOut = () => {
     setUser(null)
-    console.log(user)
     localStorage.clear()
     toggleAuth(false)
   }
 
   return (
     <div className="App">
-      <NavBar logout={handleLogOut} />
+      <NavBar logOut={handleLogOut} />
       <main>
         <Routes>
           <Route
@@ -77,6 +77,7 @@ function App() {
                 payload={payload}
                 charSuccess={charSuccess}
                 setCharSuccess={setCharSuccess}
+                charID={charID}
                 charName={charName}
                 avatar={avatar}
               />

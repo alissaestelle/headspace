@@ -1,4 +1,4 @@
-const Character = ({ payload, charName, avatar }) => {
+const Character = ({ charName, avatar }) => {
   return (
     <div className="User-Char-Grid">
       <div>

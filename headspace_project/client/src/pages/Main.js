@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ChooseChar from '../components/ChooseChar'
 import Game from '../components/Game'
 
-const Main = ({ payload, charName, avatar }) => {
+const Main = ({ payload, charID, charName, avatar }) => {
   let [character1, setCharacter1] = useState({
     userID: payload.id,
     name: '',
@@ -26,10 +26,9 @@ const Main = ({ payload, charName, avatar }) => {
           char2={character2}
           setChar2={setCharacter2}
           payload={payload}
-          // setCharSuccess={setCharSuccess}
         />
       ) : (
-        <Game payload={payload} charName={charName} avatar={avatar} />
+        <Game charID={charID} charName={charName} avatar={avatar} />
       )}
     </div>
   )

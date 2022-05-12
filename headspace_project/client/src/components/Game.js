@@ -1,6 +1,6 @@
 import Character from './Character'
 
-const Game = ({ payload, charName, avatar }) => {
+const Game = ({ charName, avatar }) => {
   return (
     <div className="Game">
       <Character charName={charName} avatar={avatar} />

@@ -12,10 +12,14 @@ export const RegisterRequest = async (data) => {
 export const LoginRequest = async (data) => {
   try {
     const res = await Client.post('/auth/login', data)
-    console.log(res.data.user)
-    localStorage.setItem('token', res.data.token)
-    localStorage.setItem('charName', res.data.user.character.name)
-    localStorage.setItem('avatar', res.data.user.character.avatar)
+    if (res.data.user.character) {
+      localStorage.setItem('token', res.data.token)
+      localStorage.setItem('charID', res.data.user.character.id)
+      localStorage.setItem('charName', res.data.user.character.name)
+      localStorage.setItem('avatar', res.data.user.character.avatar)
+    } else {
+      localStorage.setItem('token', res.data.token)
+    }
     return res.data.user
   } catch (e) {
     throw e

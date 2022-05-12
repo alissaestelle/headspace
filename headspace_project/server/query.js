@@ -51,7 +51,7 @@ const deleteChar = async () => {
 async function main() {
   try {
     // await deleteUser()
-    // await deleteChar()
+    await deleteChar()
     await getUsers()
     await getCharacters()
     // await getAchievements()

@@ -9,7 +9,8 @@ const CreateCharacter = async (req, res) => {
       }
     })
     let character = await Character.create({ ...req.body })
-    res.send(character)
+    console.log(character)
+    res.send(character.dataValues)
   } catch (e) {
     throw e
   }
