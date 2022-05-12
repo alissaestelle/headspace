@@ -1,9 +1,14 @@
-import FemaleChar from './FemaleChar'
+import FChar from './FChar'
+import MChar from './MChar'
 
-const Game = ({ character1, setCharacter1 }) => {
+const Game = ({ char1, setChar1, char2, setChar2, femChar }) => {
   return (
     <div className="Game">
-      <FemaleChar character={character1} setCharacter={setCharacter1} />
+      {femChar ? (
+        <FChar character={char1} setCharacter={setChar1} />
+      ) : (
+        <MChar character={char2} setCharacter={setChar2} />
+      )}
     </div>
   )
 }

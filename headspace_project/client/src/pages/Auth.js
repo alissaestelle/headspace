@@ -4,11 +4,12 @@ import { LoginRequest, RegisterRequest } from '../services/Requests'
 const Auth = ({
   newUser,
   setRegistration,
-  success,
-  setSuccess,
   returnUser,
   setLogin,
+  // payload,
   setPayload,
+  loginSuccess,
+  setLoginSuccess,
   toggleAuth
 }) => {
   let navigate = useNavigate()
@@ -20,7 +21,7 @@ const Auth = ({
   const submitRegister = async (e) => {
     e.preventDefault()
     await RegisterRequest(newUser)
-    setSuccess(true)
+    setLoginSuccess(true)
     setRegistration({
       firstName: '',
       lastName: '',
@@ -39,8 +40,13 @@ const Auth = ({
     const credentials = await LoginRequest(returnUser)
     setPayload(credentials)
     console.log(credentials)
+    // console.log(payload) > Returns Empty Obj
     toggleAuth(true)
-    setSuccess(true)
+    setLoginSuccess(true)
+    setLogin({
+      username: '',
+      password: ''
+    })
     navigate('/main')
   }
 
@@ -66,7 +72,7 @@ const Auth = ({
           <button>Submit</button>
         </form>
       </div>
-      {success ? (
+      {loginSuccess ? (
         <div>
           <h3>Registration Complete. Please Log In.</h3>
         </div>

@@ -1,50 +1,58 @@
+// 'https://imgur.com/qpKcK9x.png'
+// 'https://imgur.com/Fa5pjv7.png'
+
+import { useNavigate } from 'react-router-dom'
 import { CharRequest } from '../services/Requests'
 
 const ChooseChar = ({
-  character1,
-  setCharacter1,
-  character2,
-  setCharacter2,
+  char1,
+  setChar1,
+  char2,
+  setChar2,
   payload,
-  setSuccess
+  setCharSuccess,
+  setFemChar
 }) => {
+  let navigate = useNavigate()
+
   const handleCharOne = (e) => {
-    setCharacter1({
-      ...character1,
+    setChar1({
+      ...char1,
       name: e.target.value
     })
   }
 
   const handleCharTwo = (e) => {
-    setCharacter2({
-      ...character2,
+    setChar2({
+      ...char2,
       name: e.target.value
     })
   }
 
   const submitCharOne = async (e) => {
     e.preventDefault()
-    await CharRequest(character1)
+    await CharRequest(char1)
     console.log('Character Successfully Created!')
-    console.log(character1)
-    setSuccess(true)
-    setCharacter1({
+    console.log(char1)
+    setFemChar(true)
+    setCharSuccess(true)
+    setChar1({
       userID: payload.id,
       name: '',
-      avatar: 'https://imgur.com/6Zncrsk.png',
+      avatar: 'https://imgur.com/qpKcK9x.png',
       level: 1
     })
   }
 
   const submitCharTwo = async (e) => {
     e.preventDefault()
-    await CharRequest(character2)
+    await CharRequest(char2)
     console.log('Character Successfully Created!')
-    setSuccess(true)
-    setCharacter2({
+    setCharSuccess(true)
+    setChar2({
       userID: payload.id,
       name: '',
-      avatar: 'https://imgur.com/hHbsMlX.png',
+      avatar: 'https://imgur.com/Fa5pjv7.png',
       level: 1
     })
   }
@@ -56,13 +64,13 @@ const ChooseChar = ({
         <form onSubmit={submitCharOne}>
           <img
             id="Girl"
-            src="https://imgur.com/6Zncrsk.png"
+            src="https://imgur.com/qpKcK9x.png"
             alt="Character (Girl)"
           />
           <input
             required
             placeholder="Name"
-            value={character1.name}
+            value={char1.name}
             onChange={handleCharOne}
           ></input>
           <br />
@@ -71,13 +79,13 @@ const ChooseChar = ({
         <form onSubmit={submitCharTwo}>
           <img
             id="Boy"
-            src="https://imgur.com/hHbsMlX.png"
+            src="https://imgur.com/Fa5pjv7.png"
             alt="Character (Boy)"
           />
           <input
             required
             placeholder="Name"
-            value={character2.name}
+            value={char2.name}
             onChange={handleCharTwo}
           ></input>
           <br />

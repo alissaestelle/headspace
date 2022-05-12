@@ -19,10 +19,11 @@ function App() {
     password: ''
   })
 
-  let [successful, setSuccess] = useState(false)
   let [payload, setPayload] = useState({})
   let [auth, toggleAuth] = useState(false)
   let [user, setUser] = useState({})
+  let [loginSuccess, setLoginSuccess] = useState(false)
+  let [charSuccess, setCharSuccess] = useState(false)
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
@@ -42,6 +43,8 @@ function App() {
     setUser({})
     console.log(user)
     localStorage.clear()
+    toggleAuth(false)
+    setLoginSuccess(false)
   }
 
   return (
@@ -55,11 +58,12 @@ function App() {
               <Auth
                 newUser={registration}
                 setRegistration={setRegistration}
-                success={successful}
-                setSuccess={setSuccess}
                 returnUser={login}
                 setLogin={setLogin}
+                payload={payload}
                 setPayload={setPayload}
+                loginSuccess={loginSuccess}
+                setLoginSuccess={setLoginSuccess}
                 toggleAuth={toggleAuth}
               />
             }
@@ -68,11 +72,9 @@ function App() {
             path="/main"
             element={
               <Main
-                user={user}
-                setUser={setUser}
                 payload={payload}
-                success={successful}
-                setSuccess={setSuccess}
+                charSuccess={charSuccess}
+                setCharSuccess={setCharSuccess}
               />
             }
           />

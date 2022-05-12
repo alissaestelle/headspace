@@ -2,34 +2,43 @@ import { useState } from 'react'
 import ChooseChar from '../components/ChooseChar'
 import Game from '../components/Game'
 
-const Main = ({ user, payload, success, setSuccess }) => {
+const Main = ({ payload, charSuccess, setCharSuccess }) => {
   let [character1, setCharacter1] = useState({
     userID: payload.id,
     name: '',
-    avatar: 'https://imgur.com/6Zncrsk.png',
+    avatar: 'https://imgur.com/qpKcK9x.png',
     level: 1
   })
 
   let [character2, setCharacter2] = useState({
     userID: payload.id,
     name: '',
-    avatar: 'https://imgur.com/hHbsMlX.png',
+    avatar: 'https://imgur.com/Fa5pjv7.png',
     level: 1
   })
 
+  let [femChar, setFemChar] = useState(false)
+
   return (
     <div className="Main">
-      {!success ? (
+      {!charSuccess ? (
         <ChooseChar
-          character1={character1}
-          setCharacter1={setCharacter1}
-          character2={character2}
-          setCharacter2={setCharacter2}
+          char1={character1}
+          setChar1={setCharacter1}
+          char2={character2}
+          setChar2={setCharacter2}
           payload={payload}
-          setSuccess={setSuccess}
+          setCharSuccess={setCharSuccess}
+          setFemChar={setFemChar}
         />
       ) : (
-        <Game character1={character1} setCharacter1={setCharacter1} />
+        <Game
+          char1={character1}
+          setChar1={setCharacter1}
+          char2={character2}
+          setChar2={setCharacter2}
+          femChar={femChar}
+        />
       )}
     </div>
   )

@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 import { localHost } from '../services/API'
 import Client from '../services/API'
 
-const FemaleChar = ({ character, setCharacter }) => {
+const FChar = ({ character, setCharacter }) => {
   useEffect(() => {
-    const getChar = async () => {
+    const getCharOne = async () => {
       let res = await Client.get(
         `${localHost}/account/character/${character.userID}`
       )
@@ -16,20 +16,19 @@ const FemaleChar = ({ character, setCharacter }) => {
         level: thisChar.level
       })
     }
-    console.log(character)
-    getChar()
+    getCharOne()
   }, [])
 
   return (
-    <div className="Fem-Container">
+    <div className="User-Char-Grid">
       <div>
         <h2>{character.name}</h2>
       </div>
-      <div className="Fem-Char">
+      <div className="User-Char">
         <img src={character.avatar} alt={character.name} />
       </div>
     </div>
   )
 }
 
-export default FemaleChar
+export default FChar
