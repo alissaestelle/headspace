@@ -6,7 +6,6 @@ const Auth = ({
   setRegistration,
   returnUser,
   setLogin,
-  // payload,
   setPayload,
   loginSuccess,
   setLoginSuccess,
@@ -40,7 +39,6 @@ const Auth = ({
     const credentials = await LoginRequest(returnUser)
     setPayload(credentials)
     console.log(credentials)
-    // console.log(payload) > Returns Empty Obj
     toggleAuth(true)
     setLoginSuccess(true)
     setLogin({

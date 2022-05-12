@@ -12,7 +12,9 @@ export const RegisterRequest = async (data) => {
 export const LoginRequest = async (data) => {
   try {
     const res = await Client.post('/auth/login', data)
+    console.log(res.data.user)
     localStorage.setItem('token', res.data.token)
+    localStorage.setItem('character', res.data.user)
     return res.data.user
   } catch (e) {
     throw e
