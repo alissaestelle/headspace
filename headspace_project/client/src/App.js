@@ -21,7 +21,7 @@ function App() {
 
   let [payload, setPayload] = useState({})
   let [auth, toggleAuth] = useState(false)
-  let [user, setUser] = useState({})
+  let [user, setUser] = useState(null)
   let [loginSuccess, setLoginSuccess] = useState(false)
   let [charSuccess, setCharSuccess] = useState(false)
 
@@ -32,6 +32,9 @@ function App() {
     toggleAuth(true)
   }
 
+  const charName = localStorage.getItem('charName')
+  const avatar = localStorage.getItem('avatar')
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -40,11 +43,10 @@ function App() {
   }, [])
 
   const handleLogOut = () => {
-    setUser({})
+    setUser(null)
     console.log(user)
     localStorage.clear()
     toggleAuth(false)
-    setLoginSuccess(false)
   }
 
   return (
@@ -75,6 +77,8 @@ function App() {
                 payload={payload}
                 charSuccess={charSuccess}
                 setCharSuccess={setCharSuccess}
+                charName={charName}
+                avatar={avatar}
               />
             }
           />

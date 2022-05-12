@@ -1,11 +1,11 @@
-const Character = ({ payload }) => {
+const Character = ({ payload, charName, avatar }) => {
   return (
     <div className="User-Char-Grid">
       <div>
-        <h2>{payload.character.name}</h2>
+        <h2>{charName}</h2>
       </div>
       <div className="User-Char">
-        <img src={payload.character.avatar} alt={payload.character.name} />
+        <img src={avatar} alt={charName} />
       </div>
     </div>
   )
