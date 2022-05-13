@@ -33,7 +33,6 @@
   padding-top: 5px;
   text-align: center;
   background-color: aquamarine;
-
 }
 
 .Char-Container {
@@ -73,19 +72,31 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas: 
+  "a" 
+  "b" 
+  "c";
   align-items: center;
   justify-items: center;
 }
 
-.User-Char-Grid h2 {
+#User-Char-Name {
+  grid-area: a;
   color: whitesmoke;
 }
 
-.User-Char img {
+#User-Char-Img {
+  grid-area: b;
   width: 250px;
   padding-left: 10px;
 }
+
+#User-Char-Level {
+  grid-area: c;
+  color: whitesmoke;
+}
+
 
 .Achieve-Card {
   width: 275px;

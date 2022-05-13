@@ -2,7 +2,17 @@ import { useEffect } from 'react'
 import { GetAchievements } from '../services/Requests'
 import Achievement from './Achievement'
 
-const Character = ({ charName, avatar, level, achievements, setAchieve }) => {
+const Character = ({
+  charName,
+  avatar,
+  stats,
+  setStats,
+  level,
+  achievements,
+  setAchieve,
+  points,
+  setPoints
+}) => {
   useEffect(() => {
     const getAchievements = async () => {
       let results = await GetAchievements()
@@ -13,16 +23,12 @@ const Character = ({ charName, avatar, level, achievements, setAchieve }) => {
   }, [])
 
   return (
-    <div>
+    <div className="Character">
       <div className="User-Char-Grid">
-        <div>
-          <h2>{charName}</h2>
-        </div>
-        <div className="User-Char">
-          <img src={avatar} alt={charName} />
-        </div>
+        <h2 id="User-Char-Name">{charName}</h2>
+        <img id="User-Char-Img" src={avatar} alt={charName} />
+        <h2 id="User-Char-Level">Level: {level}</h2>
       </div>
-      {/* <h2>Level: 1</h2> */}
       <div>
         {achievements.map(
           (achievement, idx) =>

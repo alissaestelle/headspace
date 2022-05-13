@@ -17,6 +17,8 @@ export const LoginRequest = async (data) => {
       localStorage.setItem('charID', res.data.user.character.id)
       localStorage.setItem('charName', res.data.user.character.name)
       localStorage.setItem('avatar', res.data.user.character.avatar)
+      localStorage.setItem('level', res.data.user.character.level)
+      localStorage.setItem('stats', res.data.user.character.stats)
     } else {
       localStorage.setItem('token', res.data.token)
     }

@@ -24,10 +24,11 @@ function App() {
   let [user, setUser] = useState({})
   let [loginSuccess, setLoginSuccess] = useState(false)
   let [achievements, setAchieve] = useState([])
+  let [points, setPoints] = useState(0)
   let [charName, setCharName] = useState(localStorage.getItem('charName'))
   let [avatar, setAvatar] = useState(localStorage.getItem('avatar'))
   let [level, setLevel] = useState(localStorage.getItem('level'))
-  let [points, setPoints] = useState(0)
+  let [stats, setStats] = useState(localStorage.getItem('stats'))
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
@@ -87,10 +88,12 @@ function App() {
                 setAvatar={setAvatar}
                 level={level}
                 setLevel={setLevel}
-                points={points}
-                setPoints={setPoints}
+                stats={stats}
+                setStats={setStats}
                 achievements={achievements}
                 setAchieve={setAchieve}
+                points={points}
+                setPoints={setPoints}
               />
             }
           />
