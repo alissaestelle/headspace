@@ -1,4 +1,4 @@
-const { User, Character } = require('../models')
+const { User, Character, Achievement } = require('../models')
 const middleware = require('../middleware')
 
 const CreateCharacter = async (req, res) => {
@@ -24,6 +24,19 @@ const GetCharacter = async (req, res) => {
       }
     })
     res.send(character)
+  } catch (e) {
+    throw e
+  }
+}
+
+const GetAchievements = async (req, res) => {
+  try {
+    let achievements = await Achievement.findAll({
+      where: {
+        characterID: null
+      }
+    })
+    res.send(achievements)
   } catch (e) {
     throw e
   }
@@ -65,6 +78,7 @@ const DeleteUser = async (req, res) => {
 module.exports = {
   CreateCharacter,
   GetCharacter,
+  GetAchievements,
   UpdatePassword,
   DeleteUser
 }

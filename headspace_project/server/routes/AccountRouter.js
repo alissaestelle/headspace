@@ -11,6 +11,8 @@ router.post(
   controller.CreateCharacter
 )
 
+router.get('/character/daily', controller.GetAchievements)
+
 router.put(
   '/password/:pk',
   middleware.stripToken,
