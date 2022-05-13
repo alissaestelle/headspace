@@ -23,7 +23,7 @@ function App() {
   let [auth, toggleAuth] = useState(false)
   let [user, setUser] = useState(null)
   let [loginSuccess, setLoginSuccess] = useState(false)
-  let [charSuccess, setCharSuccess] = useState(false)
+  let [achievements, setAchievements] = useState([])
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
@@ -75,11 +75,11 @@ function App() {
             element={
               <Main
                 payload={payload}
-                charSuccess={charSuccess}
-                setCharSuccess={setCharSuccess}
                 charID={charID}
                 charName={charName}
                 avatar={avatar}
+                achievements={achievements}
+                setAchievements={setAchievements}
               />
             }
           />

@@ -42,7 +42,7 @@ module.exports = {
           characterID: null,
           title: 'Give Yourself a Meaningful Compliment',
           type: 'Beginner',
-          points: 3,
+          points: 2,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -91,7 +91,7 @@ module.exports = {
           characterID: null,
           title: 'Recall Something That Made You Laugh Recently',
           type: 'Beginner',
-          points: 1,
+          points: 2,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -99,7 +99,7 @@ module.exports = {
           characterID: null,
           title: 'Apply a Hot Wash Cloth to the Back of Your Neck Before Bed',
           type: 'Beginner',
-          points: 2,
+          points: 3,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -129,7 +129,7 @@ module.exports = {
         },
         {
           characterID: null,
-          title: 'Reward Yourself For a Recent Accomplishment',
+          title: 'Cherish a Recent Accomplishment',
           type: 'Beginner',
           points: 2,
           createdAt: new Date(),
@@ -147,7 +147,7 @@ module.exports = {
           characterID: null,
           title: 'Empathize With Your Current Situation',
           type: 'Beginner',
-          points: 2,
+          points: 3,
           createdAt: new Date(),
           updatedAt: new Date()
         },
