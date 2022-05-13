@@ -1,3 +1,7 @@
+.App {
+  height: 100vh;
+}
+
 .Login div {
   display: inline;
   width: 400px;
@@ -66,13 +70,13 @@
 
 .User-Char-Grid {
   padding-top: 2.5%;
-  width: 250px;
+  width: 300px;
   height: 300px;
   margin: auto;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 50px;
+  grid-template-rows: 30px 1fr 30px;
   grid-template-areas: 
   "a" 
   "b" 
@@ -84,26 +88,38 @@
 #User-Char-Name {
   grid-area: a;
   color: whitesmoke;
+  margin: 0;
 }
 
 #User-Char-Img {
   grid-area: b;
-  width: 250px;
+  width: 275px;
+  height: 275px;
   padding-left: 10px;
+  padding-bottom: 5px;
+  align-self: center;
 }
 
 #User-Char-Level {
   grid-area: c;
   color: whitesmoke;
+  margin: 0;
 }
 
+.Achieve-Container {
+  width: 300px;
+  height: auto;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .Achieve-Card {
   width: 275px;
   height: 70px;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   color: whitesmoke;
   background-color: cornflowerblue;
   border-radius: 10px;

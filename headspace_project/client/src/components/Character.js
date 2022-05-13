@@ -29,18 +29,17 @@ const Character = ({
         <img id="User-Char-Img" src={avatar} alt={charName} />
         <h2 id="User-Char-Level">Level: {level}</h2>
       </div>
-      <div>
-        {achievements.map(
-          (achievement, idx) =>
-            idx < 3 && (
-              <Achievement
-                key={achievement.id}
-                title={achievement.title}
-                points={achievement.points}
-              />
-            )
-        )}
-      </div>
+      <div className="Achieve-Container"></div>
+      {achievements.map(
+        (achievement, idx) =>
+          idx < 3 && (
+            <Achievement
+              key={achievement.id}
+              title={achievement.title}
+              points={achievement.points}
+            />
+          )
+      )}
     </div>
   )
 }
