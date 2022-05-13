@@ -20,6 +20,7 @@ const ChooseChar = ({ payload, char1, setChar1, char2, setChar2 }) => {
 
   const submitCharOne = async () => {
     await CharRequest(char1)
+    // localStorage.setItem('charID', results.id)
     localStorage.setItem('charName', char1.name)
     localStorage.setItem('avatar', char1.avatar)
     console.log('Character Successfully Created!')
@@ -33,11 +34,11 @@ const ChooseChar = ({ payload, char1, setChar1, char2, setChar2 }) => {
 
   const submitCharTwo = async (e) => {
     e.preventDefault()
-    let res = await CharRequest(char2)
-    console.log('Character Successfully Created!')
-    console.log(res)
+    await CharRequest(char2)
+    // localStorage.setItem('charID', results.id)
     localStorage.setItem('charName', char2.name)
     localStorage.setItem('avatar', char2.avatar)
+    console.log('Character Successfully Created!')
     setChar2({
       userID: payload.id,
       name: '',

@@ -35,6 +35,16 @@ export const CharRequest = async (data) => {
   }
 }
 
+export const GetAchievements = async () => {
+  try {
+    const res = await Client.get('/account/daily')
+    console.log(res)
+    return res.data
+  } catch (e) {
+    throw e
+  }
+}
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')

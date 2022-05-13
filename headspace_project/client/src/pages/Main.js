@@ -28,11 +28,11 @@ const Main = ({
     <div className="Main">
       {!charName ? (
         <ChooseChar
+          payload={payload}
           char1={character1}
           setChar1={setCharacter1}
           char2={character2}
           setChar2={setCharacter2}
-          payload={payload}
         />
       ) : (
         <Game
