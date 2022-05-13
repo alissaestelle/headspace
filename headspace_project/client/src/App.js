@@ -51,6 +51,7 @@ function App() {
     setUser(null)
     localStorage.clear()
     toggleAuth(false)
+    setLoginSuccess(false)
   }
 
   return (

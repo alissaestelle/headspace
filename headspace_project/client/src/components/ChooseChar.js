@@ -30,6 +30,7 @@ const ChooseChar = ({
   const submitCharOne = async (e) => {
     e.preventDefault()
     let results = await CharRequest(char1)
+    console.log(char1)
     setCharName(char1.name)
     setAvatar(char1.avatar)
     setLevel(char1.level)
@@ -42,14 +43,19 @@ const ChooseChar = ({
       userID: payload.id,
       name: '',
       avatar: 'https://imgur.com/qpKcK9x.png',
-      level: 1
+      level: 1,
+      stats: 0
     })
   }
 
   const submitCharTwo = async (e) => {
     e.preventDefault()
-    await CharRequest(char2)
-    // localStorage.setItem('charID', results.id)
+    let results = await CharRequest(char2)
+    console.log(char2)
+    setCharName(char2.name)
+    setAvatar(char2.avatar)
+    setLevel(char2.level)
+    localStorage.setItem('charID', results.id)
     localStorage.setItem('charName', char2.name)
     localStorage.setItem('avatar', char2.avatar)
     localStorage.setItem('level', char2.level)
@@ -58,7 +64,8 @@ const ChooseChar = ({
       userID: payload.id,
       name: '',
       avatar: 'https://imgur.com/Fa5pjv7.png',
-      level: 1
+      level: 1,
+      stats: 0
     })
   }
 
