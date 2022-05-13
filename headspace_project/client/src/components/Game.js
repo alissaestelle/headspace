@@ -1,6 +1,6 @@
 import Character from './Character'
 
-const Game = ({ charName, avatar, level, achievements, setAchievements }) => {
+const Game = ({ charName, avatar, level, achievements, setAchieve }) => {
   return (
     <div className="Game">
       <Character
@@ -8,7 +8,7 @@ const Game = ({ charName, avatar, level, achievements, setAchievements }) => {
         avatar={avatar}
         level={level}
         achievements={achievements}
-        setAchievements={setAchievements}
+        setAchieve={setAchieve}
       />
     </div>
   )

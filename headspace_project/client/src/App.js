@@ -23,7 +23,7 @@ function App() {
   let [auth, toggleAuth] = useState(false)
   let [user, setUser] = useState({})
   let [loginSuccess, setLoginSuccess] = useState(false)
-  let [achievements, setAchievements] = useState([])
+  let [achievements, setAchieve] = useState([])
   let [charName, setCharName] = useState(localStorage.getItem('charName'))
   let [avatar, setAvatar] = useState(localStorage.getItem('avatar'))
   let [level, setLevel] = useState(localStorage.getItem('level'))
@@ -89,7 +89,7 @@ function App() {
                 points={points}
                 setPoints={setPoints}
                 achievements={achievements}
-                setAchievements={setAchievements}
+                setAchieve={setAchieve}
               />
             }
           />

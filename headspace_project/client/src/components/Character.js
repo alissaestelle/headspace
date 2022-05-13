@@ -2,17 +2,11 @@ import { useEffect } from 'react'
 import { GetAchievements } from '../services/Requests'
 import Achievement from './Achievement'
 
-const Character = ({
-  charName,
-  avatar,
-  level,
-  achievements,
-  setAchievements
-}) => {
+const Character = ({ charName, avatar, level, achievements, setAchieve }) => {
   useEffect(() => {
     const getAchievements = async () => {
       let results = await GetAchievements()
-      setAchievements(results)
+      setAchieve(results)
       console.log(results)
     }
     getAchievements()
