@@ -3,7 +3,14 @@
 
 import { CharRequest } from '../services/Requests'
 
-const ChooseChar = ({ payload, char1, setChar1, char2, setChar2 }) => {
+const ChooseChar = ({
+  payload,
+  setCharName,
+  char1,
+  setChar1,
+  char2,
+  setChar2
+}) => {
   const handleCharOne = (e) => {
     setChar1({
       ...char1,
@@ -18,11 +25,14 @@ const ChooseChar = ({ payload, char1, setChar1, char2, setChar2 }) => {
     })
   }
 
-  const submitCharOne = async () => {
+  const submitCharOne = async (e) => {
+    e.preventDefault()
     await CharRequest(char1)
     // localStorage.setItem('charID', results.id)
+    setCharName(char1.name)
     localStorage.setItem('charName', char1.name)
     localStorage.setItem('avatar', char1.avatar)
+    localStorage.setItem('level', char1.level)
     console.log('Character Successfully Created!')
     setChar1({
       userID: payload.id,
@@ -38,6 +48,7 @@ const ChooseChar = ({ payload, char1, setChar1, char2, setChar2 }) => {
     // localStorage.setItem('charID', results.id)
     localStorage.setItem('charName', char2.name)
     localStorage.setItem('avatar', char2.avatar)
+    localStorage.setItem('level', char2.level)
     console.log('Character Successfully Created!')
     setChar2({
       userID: payload.id,

@@ -6,7 +6,9 @@ const Main = ({
   payload,
   charID,
   charName,
+  setCharName,
   avatar,
+  level,
   achievements,
   setAchievements
 }) => {
@@ -29,6 +31,7 @@ const Main = ({
       {!charName ? (
         <ChooseChar
           payload={payload}
+          setCharName={setCharName}
           char1={character1}
           setChar1={setCharacter1}
           char2={character2}
@@ -39,6 +42,7 @@ const Main = ({
           charID={charID}
           charName={charName}
           avatar={avatar}
+          level={level}
           achievements={achievements}
           setAchievements={setAchievements}
         />

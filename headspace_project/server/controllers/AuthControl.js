@@ -37,11 +37,13 @@ const Login = async (req, res) => {
       let payload = character
         ? {
             id: user.id,
+            firstName: user.firstName,
             username: user.username,
             character: character.dataValues
           }
         : {
             id: user.id,
+            firstName: user.firstName,
             username: user.username
           }
       let token = middleware.createToken(payload)
