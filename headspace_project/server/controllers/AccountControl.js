@@ -31,7 +31,11 @@ const GetCharacter = async (req, res) => {
 
 const GetAchievements = async (req, res) => {
   try {
-    let achievements = await Achievement.findAll()
+    let achievements = await Achievement.findAll({
+      where: {
+        characterID: null
+      }
+    })
     res.send(achievements)
   } catch (e) {
     throw e
