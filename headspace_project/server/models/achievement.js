@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       characterID: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         onDelete: 'CASCADE',
         references: {
           model: 'characters',
