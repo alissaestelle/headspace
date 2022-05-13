@@ -5,11 +5,13 @@ import { CharRequest } from '../services/Requests'
 
 const ChooseChar = ({
   payload,
-  setCharName,
   char1,
   setChar1,
   char2,
-  setChar2
+  setChar2,
+  setCharName,
+  setAvatar,
+  setLevel
 }) => {
   const handleCharOne = (e) => {
     setChar1({
@@ -27,9 +29,11 @@ const ChooseChar = ({
 
   const submitCharOne = async (e) => {
     e.preventDefault()
-    await CharRequest(char1)
-    // localStorage.setItem('charID', results.id)
+    let results = await CharRequest(char1)
     setCharName(char1.name)
+    setAvatar(char1.avatar)
+    setLevel(char1.level)
+    localStorage.setItem('charID', results.id)
     localStorage.setItem('charName', char1.name)
     localStorage.setItem('avatar', char1.avatar)
     localStorage.setItem('level', char1.level)

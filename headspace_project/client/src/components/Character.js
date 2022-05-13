@@ -13,6 +13,7 @@ const Character = ({
     const getAchievements = async () => {
       let results = await GetAchievements()
       setAchievements(results)
+      console.log(results)
     }
     getAchievements()
   }, [])

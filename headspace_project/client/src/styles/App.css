@@ -88,22 +88,42 @@
 }
 
 .Achieve-Card {
-  width: 300px;
-  height: 100px;
+  width: 275px;
+  height: 70px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   color: whitesmoke;
   background-color: cornflowerblue;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 5px whitesmoke;
 
 
   display: grid;
   grid-template-columns: 1fr 0.25fr;
   grid-template-rows: 1fr;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
+  grid-template-areas: 
+  "a b";
 
+}
+
+.Achieve-Card h4 {
+  grid-area: a;
+  margin: 0;
+  align-self: center;
+  justify-self: start;
+  padding-left: 10px;
+}
+
+.Achieve-Card h3 {
+  grid-area: b;
+  align-self: center;
+  justify-self: end;
+  padding-right: 20px;
+}
+
+.Achieve-Card:hover {
+  background: rgb(148, 178, 233);
 }
 
 /* @media only screen and (max-width: 900px) {

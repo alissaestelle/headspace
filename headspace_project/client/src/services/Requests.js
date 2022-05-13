@@ -48,7 +48,7 @@ export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')
     console.log('Check Session Working')
-    console.log(res)
+    console.log(res.data)
     return res.data
   } catch (e) {
     throw e

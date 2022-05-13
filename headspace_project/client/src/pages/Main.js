@@ -8,7 +8,11 @@ const Main = ({
   charName,
   setCharName,
   avatar,
+  setAvatar,
   level,
+  setLevel,
+  points,
+  setPoints,
   achievements,
   setAchievements
 }) => {
@@ -31,11 +35,13 @@ const Main = ({
       {!charName ? (
         <ChooseChar
           payload={payload}
-          setCharName={setCharName}
           char1={character1}
           setChar1={setCharacter1}
           char2={character2}
           setChar2={setCharacter2}
+          setCharName={setCharName}
+          setAvatar={setAvatar}
+          setLevel={setLevel}
         />
       ) : (
         <Game
@@ -43,6 +49,8 @@ const Main = ({
           charName={charName}
           avatar={avatar}
           level={level}
+          points={points}
+          setPoints={setPoints}
           achievements={achievements}
           setAchievements={setAchievements}
         />

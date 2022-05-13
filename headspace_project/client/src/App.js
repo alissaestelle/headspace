@@ -25,6 +25,9 @@ function App() {
   let [loginSuccess, setLoginSuccess] = useState(false)
   let [achievements, setAchievements] = useState([])
   let [charName, setCharName] = useState(localStorage.getItem('charName'))
+  let [avatar, setAvatar] = useState(localStorage.getItem('avatar'))
+  let [level, setLevel] = useState(localStorage.getItem('level'))
+  let [points, setPoints] = useState(0)
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
@@ -34,8 +37,8 @@ function App() {
 
   const charID = localStorage.getItem('charID')
   // const charName = localStorage.getItem('charName')
-  const avatar = localStorage.getItem('avatar')
-  const level = localStorage.getItem('level')
+  // const avatar = localStorage.getItem('avatar')
+  // const level = localStorage.getItem('level')
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -80,7 +83,11 @@ function App() {
                 charName={charName}
                 setCharName={setCharName}
                 avatar={avatar}
+                setAvatar={setAvatar}
                 level={level}
+                setLevel={setLevel}
+                points={points}
+                setPoints={setPoints}
                 achievements={achievements}
                 setAchievements={setAchievements}
               />
