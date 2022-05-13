@@ -64,10 +64,42 @@ module.exports = {
         },
         {
           characterID: null,
-          title:
-            'Elevate Shower Time with Fresh Eucaplyptus, Music, Shower Steamers, etc.',
+          title: 'Hang Fresh Eucalyptus on Your Shower Head',
           type: 'Beginner',
           points: 3,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: "Mindfully Choose Today's Outfit",
+          type: 'Beginner',
+          points: 3,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Reflect on the Last Story You Emotionally Connected With',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title:
+            'Recall The Most Recent Thing That Made You Laugh *Really* Hard',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Apply a Hot Wash Cloth to the Back of Your Neck Before Bed',
+          type: 'Beginner',
+          points: 2,
           createdAt: new Date(),
           updatedAt: new Date()
         }
