@@ -64,7 +64,7 @@ module.exports = {
         },
         {
           characterID: null,
-          title: 'Hang Fresh Eucalyptus on Your Shower Head',
+          title: 'Hang Fresh Eucalyptus From Your Shower Head',
           type: 'Beginner',
           points: 3,
           createdAt: new Date(),
@@ -80,7 +80,8 @@ module.exports = {
         },
         {
           characterID: null,
-          title: 'Reflect on the Last Story You Emotionally Connected With',
+          title:
+            'Reflect on the Last Experience You Emotionally Connected With',
           type: 'Beginner',
           points: 2,
           createdAt: new Date(),
@@ -88,16 +89,87 @@ module.exports = {
         },
         {
           characterID: null,
-          title:
-            'Recall The Most Recent Thing That Made You Laugh *Really* Hard',
+          title: 'Recall Something That Made You Laugh Recently',
           type: 'Beginner',
-          points: 2,
+          points: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           characterID: null,
           title: 'Apply a Hot Wash Cloth to the Back of Your Neck Before Bed',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Wake Up Early on Saturday and Create Your Ideal Morning',
+          type: 'Beginner',
+          points: 3,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Enjoy Some Sunlight',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: "Tell Yourself It's Okay to Feel _____",
+          type: 'Beginner',
+          points: 3,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Reward Yourself For a Recent Accomplishment',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Hydrate With Mineral Water',
+          type: 'Beginner',
+          points: 3,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Empathize With Your Current Situation',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Only Focus on One Task at a Time',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Explore a New Podcast, Album, Recipe, etc.',
+          type: 'Beginner',
+          points: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          characterID: null,
+          title: 'Think About Someone Who Inspires You and Why',
           type: 'Beginner',
           points: 2,
           createdAt: new Date(),
@@ -115,5 +187,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('achievements', null, {})
   }
 }
