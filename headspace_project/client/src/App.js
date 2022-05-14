@@ -33,6 +33,7 @@ function App() {
   const checkToken = async () => {
     let userInfo = await CheckSession()
     setUser(userInfo)
+    console.log(userInfo)
     toggleAuth(true)
   }
 
@@ -81,6 +82,7 @@ function App() {
             element={
               <Main
                 payload={payload}
+                user={user}
                 charID={charID}
                 charName={charName}
                 setCharName={setCharName}

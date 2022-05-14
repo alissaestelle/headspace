@@ -37,6 +37,16 @@ export const CharRequest = async (data) => {
   }
 }
 
+export const GetUserChar = async () => {
+  try {
+    const res = await Client.get('/account/character')
+    console.log(res.data)
+    return res.data
+  } catch (e) {
+    throw e
+  }
+}
+
 export const GetAchievements = async () => {
   try {
     const res = await Client.get('/account/daily')

@@ -4,6 +4,7 @@ import Game from '../components/Game'
 
 const Main = ({
   payload,
+  user,
   charID,
   charName,
   setCharName,
@@ -47,6 +48,8 @@ const Main = ({
         />
       ) : (
         <Game
+          payload={payload}
+          user={user}
           charID={charID}
           charName={charName}
           avatar={avatar}

@@ -3,6 +3,7 @@ import { GetAchievements } from '../services/Requests'
 import Achievement from './Achievement'
 
 const Character = ({
+  payload,
   charName,
   avatar,
   stats,
@@ -22,6 +23,15 @@ const Character = ({
     getAchievements()
   }, [])
 
+  // const postAchievement = async (e) => {
+  //   let results = await
+  // }
+
+  const testWin = () => {
+    console.log('This is Working')
+    // postAchievement(e)
+  }
+
   return (
     <div className="Character">
       <div className="User-Char-Grid">
@@ -34,9 +44,12 @@ const Character = ({
         (achievement, idx) =>
           idx < 3 && (
             <Achievement
+              payload={payload}
               key={achievement.id}
               title={achievement.title}
+              type={achievement.type}
               points={achievement.points}
+              testWin={testWin}
             />
           )
       )}

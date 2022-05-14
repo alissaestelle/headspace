@@ -20,7 +20,7 @@ const GetCharacter = async (req, res) => {
   try {
     let character = await Character.findOne({
       where: {
-        userID: req.params.userID
+        id: req.params.ID
       }
     })
     res.send(character)

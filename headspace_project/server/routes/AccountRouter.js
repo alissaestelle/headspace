@@ -2,7 +2,12 @@ const router = require('express').Router()
 const controller = require('../controllers/AccountControl')
 const middleware = require('../middleware')
 
-router.get('/character/:userID', controller.GetCharacter)
+router.get(
+  '/character/:ID',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetCharacter
+)
 
 router.post(
   '/character',
