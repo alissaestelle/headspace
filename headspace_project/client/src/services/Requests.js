@@ -50,7 +50,6 @@ export const GetUserChar = async () => {
 export const GetAchievements = async () => {
   try {
     const res = await Client.get('/account/daily')
-    localStorage.setItem('achievements', res.data)
     return res.data
   } catch (e) {
     throw e

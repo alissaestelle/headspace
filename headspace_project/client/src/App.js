@@ -23,13 +23,13 @@ function App() {
   let [auth, toggleAuth] = useState(false)
   let [user, setUser] = useState({})
   let [loginSuccess, setLoginSuccess] = useState(false)
-  let [achievements, setAchieve] = useState([])
-  let [points, setPoints] = useState(0)
 
   let [charName, setCharName] = useState(localStorage.getItem('charName'))
   let [avatar, setAvatar] = useState(localStorage.getItem('avatar'))
   let [level, setLevel] = useState(localStorage.getItem('level'))
   let [stats, setStats] = useState(localStorage.getItem('stats'))
+  let [achievements, setAchieve] = useState([])
+  let [points, setPoints] = useState(0)
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
@@ -51,7 +51,7 @@ function App() {
   }, [])
 
   const handleLogOut = () => {
-    setUser(null)
+    setUser({})
     localStorage.clear()
     toggleAuth(false)
     setLoginSuccess(false)
