@@ -4,6 +4,7 @@ import { CheckSession } from './services/Requests'
 import NavBar from './components/NavBar'
 import Auth from './pages/Auth'
 import Main from './pages/Main'
+import achievements from './achievements'
 import './styles/App.css'
 
 function App() {
@@ -28,8 +29,10 @@ function App() {
   let [avatar, setAvatar] = useState(localStorage.getItem('avatar'))
   let [level, setLevel] = useState(localStorage.getItem('level'))
   let [stats, setStats] = useState(localStorage.getItem('stats'))
-  let [achievements, setAchieve] = useState([])
+  let [achieveArr, setAchieve] = useState(achievements)
+  let [updates, setUpdates] = useState(localStorage.getItem('updates'))
   let [points, setPoints] = useState(0)
+  let [status, setStatus] = useState(0)
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
@@ -52,9 +55,9 @@ function App() {
 
   const handleLogOut = () => {
     setUser({})
-    localStorage.clear()
     toggleAuth(false)
     setLoginSuccess(false)
+    localStorage.clear()
   }
 
   return (
@@ -93,10 +96,14 @@ function App() {
                 setLevel={setLevel}
                 stats={stats}
                 setStats={setStats}
-                achievements={achievements}
+                achieveArr={achieveArr}
                 setAchieve={setAchieve}
                 points={points}
                 setPoints={setPoints}
+                status={status}
+                setStatus={setStatus}
+                updates={updates}
+                setUpdates={setUpdates}
               />
             }
           />

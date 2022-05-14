@@ -12,10 +12,14 @@ const Game = ({
   level,
   stats,
   setStats,
-  achievements,
+  achieveArr,
   setAchieve,
   points,
-  setPoints
+  setPoints,
+  // updates,
+  // setUpdates
+  status,
+  setStatus
 }) => {
   useEffect(() => {
     const getCharacter = async () => {
@@ -34,10 +38,14 @@ const Game = ({
         level={level}
         stats={stats}
         setStats={setStats}
-        achievements={achievements}
+        achieveArr={achieveArr}
         setAchieve={setAchieve}
         points={points}
         setPoints={setPoints}
+        // updates={updates}
+        // setUpdates={setUpdates}
+        status={status}
+        setStatus={setStatus}
       />
     </div>
   )

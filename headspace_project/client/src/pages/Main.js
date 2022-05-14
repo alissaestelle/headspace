@@ -14,10 +14,14 @@ const Main = ({
   setLevel,
   stats,
   setStats,
-  achievements,
+  achieveArr,
   setAchieve,
   points,
-  setPoints
+  setPoints,
+  status,
+  setStatus,
+  updates,
+  setUpdates
 }) => {
   let [character1, setCharacter1] = useState({
     userID: payload.id,
@@ -56,10 +60,14 @@ const Main = ({
           level={level}
           stats={stats}
           setStats={setStats}
-          achievements={achievements}
+          achieveArr={achieveArr}
           setAchieve={setAchieve}
           points={points}
           setPoints={setPoints}
+          status={status}
+          setStatus={setStatus}
+          updates={updates}
+          setUpdates={setUpdates}
         />
       )}
     </div>

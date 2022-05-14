@@ -50,7 +50,7 @@ const deleteChar = async () => {
 
 async function main() {
   try {
-    // await deleteUser()
+    await deleteUser()
     await deleteChar()
     await getUsers()
     await getCharacters()

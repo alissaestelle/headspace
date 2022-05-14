@@ -9,32 +9,44 @@ const Character = ({
   stats,
   setStats,
   level,
-  achievements,
+  achieveArr,
   setAchieve,
   points,
-  setPoints
+  setPoints,
+  status,
+  setStatus
+  // updates,
+  // setUpdates
 }) => {
-  useEffect(() => {
-    const getAchievements = async () => {
-      let results = await GetAchievements()
-      setAchieve(results)
-      console.log(results)
-    }
-    getAchievements()
-  }, [])
+  // let [updates, setUpdates] = useState(achievements)
+  // let [achievement, toggleAchievement] = useState(false)
 
-  // const postAchievement = async (e) => {
-  //   let results = await
-  // }
+  // useEffect(() => {
+  //   const getAchievements = async () => {
+  //     let results = await GetAchievements()
+  //     setAchieve(results)
+  //     console.log(results)
+  //     localStorage.getItem('status')
+  //   }
+  //   getAchievements()
+  // }, [])
+
+  // useEffect(() => {
+  //   let test = localStorage.getItem('newArr')
+  //   setAchieve(test)
+  // }, [achieveArr])
 
   const testWin = (idx) => {
-    let done = achievements.splice(idx, 1)
-    console.log(done)
-    let newArr = achievements.filter((achievement, idx) => {
-      return achievement !== idx
+    let element = achieveArr.shift()
+    console.log(element)
+    let newArr = achieveArr.filter((elem, idx) => {
+      return elem !== idx
     })
-    console.log(newArr)
     setAchieve(newArr)
+    setStatus(status + 1)
+    localStorage.setItem('newArr', JSON.stringify(newArr))
+    console.log(newArr)
+    // getUpdates()
   }
 
   return (
@@ -45,15 +57,15 @@ const Character = ({
         <h2 id="User-Char-Level">Level: {level}</h2>
       </div>
       <div className="Achieve-Container"></div>
-      {achievements.map(
-        (achievement, idx) =>
+      {achieveArr.map(
+        (elem, idx) =>
           idx < 3 && (
             <Achievement
+              key={elem.title}
               payload={payload}
-              key={achievement.id}
-              title={achievement.title}
-              type={achievement.type}
-              points={achievement.points}
+              title={elem.title}
+              type={elem.type}
+              points={elem.points}
               testWin={() => testWin(idx)}
             />
           )
