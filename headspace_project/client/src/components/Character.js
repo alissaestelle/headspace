@@ -27,9 +27,14 @@ const Character = ({
   //   let results = await
   // }
 
-  const testWin = () => {
-    console.log('This is Working')
-    // postAchievement(e)
+  const testWin = (idx) => {
+    let done = achievements.splice(idx, 1)
+    console.log(done)
+    let newArr = achievements.filter((achievement, idx) => {
+      return achievement !== idx
+    })
+    console.log(newArr)
+    setAchieve(newArr)
   }
 
   return (
@@ -49,7 +54,7 @@ const Character = ({
               title={achievement.title}
               type={achievement.type}
               points={achievement.points}
-              testWin={testWin}
+              testWin={() => testWin(idx)}
             />
           )
       )}
