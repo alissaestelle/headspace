@@ -25,6 +25,7 @@ function App() {
   let [loginSuccess, setLoginSuccess] = useState(false)
   let [achievements, setAchieve] = useState([])
   let [points, setPoints] = useState(0)
+
   let [charName, setCharName] = useState(localStorage.getItem('charName'))
   let [avatar, setAvatar] = useState(localStorage.getItem('avatar'))
   let [level, setLevel] = useState(localStorage.getItem('level'))
