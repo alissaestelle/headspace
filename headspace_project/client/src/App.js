@@ -32,7 +32,6 @@ function App() {
   let [achieveArr, setAchieve] = useState(achievements)
   let [updates, setUpdates] = useState(localStorage.getItem('updates'))
   let [points, setPoints] = useState(0)
-  let [status, setStatus] = useState(0)
 
   const checkToken = async () => {
     let userInfo = await CheckSession()
@@ -100,8 +99,6 @@ function App() {
                 setAchieve={setAchieve}
                 points={points}
                 setPoints={setPoints}
-                status={status}
-                setStatus={setStatus}
                 updates={updates}
                 setUpdates={setUpdates}
               />

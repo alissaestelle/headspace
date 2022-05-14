@@ -16,10 +16,8 @@ const Game = ({
   setAchieve,
   points,
   setPoints,
-  // updates,
-  // setUpdates
-  status,
-  setStatus
+  updates,
+  setUpdates
 }) => {
   useEffect(() => {
     const getCharacter = async () => {
@@ -42,10 +40,8 @@ const Game = ({
         setAchieve={setAchieve}
         points={points}
         setPoints={setPoints}
-        // updates={updates}
-        // setUpdates={setUpdates}
-        status={status}
-        setStatus={setStatus}
+        updates={updates}
+        setUpdates={setUpdates}
       />
     </div>
   )

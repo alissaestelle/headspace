@@ -13,10 +13,8 @@ const Character = ({
   setAchieve,
   points,
   setPoints,
-  status,
-  setStatus
-  // updates,
-  // setUpdates
+  updates,
+  setUpdates
 }) => {
   // let [updates, setUpdates] = useState(achievements)
   // let [achievement, toggleAchievement] = useState(false)
@@ -43,7 +41,6 @@ const Character = ({
       return elem !== idx
     })
     setAchieve(newArr)
-    setStatus(status + 1)
     localStorage.setItem('newArr', JSON.stringify(newArr))
     console.log(newArr)
     // getUpdates()
@@ -75,3 +72,5 @@ const Character = ({
 }
 
 export default Character
+
+// Create a Post for Achievements

@@ -18,8 +18,6 @@ const Main = ({
   setAchieve,
   points,
   setPoints,
-  status,
-  setStatus,
   updates,
   setUpdates
 }) => {
@@ -64,8 +62,6 @@ const Main = ({
           setAchieve={setAchieve}
           points={points}
           setPoints={setPoints}
-          status={status}
-          setStatus={setStatus}
           updates={updates}
           setUpdates={setUpdates}
         />
