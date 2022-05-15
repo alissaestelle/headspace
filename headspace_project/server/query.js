@@ -42,7 +42,7 @@ const deleteUser = async () => {
 const deleteChar = async () => {
   let user = await Character.destroy({
     where: {
-      name: 'Harmony'
+      name: 'Finn'
     }
   })
   stringify(user)
