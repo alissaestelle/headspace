@@ -44,7 +44,7 @@ const Account = ({
     navigate('/')
   }
 
-  const handleDelete = async (e) => {
+  const handleUserDelete = async (e) => {
     e.preventDefault()
     await Client.delete(`${localHost}/account/user/${pK}`)
     setUser({})
@@ -81,12 +81,21 @@ const Account = ({
           ></input>
           <button id="Edit">Submit</button>
         </form>
-        <div>
+        <div className="Delete-Char">
+          <h1>
+            <span id="New">Change</span>
+            <span id="Character">Character</span>
+          </h1>
+          <button id="Char-Delete" onClick="">
+            Delete
+          </button>
+        </div>
+        <div className="Delete-User">
           <h1>
             <span id="Saying">Saying</span>
             <span id="Farewell">Farewell?</span>
           </h1>
-          <button id="Delete" onClick={handleDelete}>
+          <button id="User-Delete" onClick={handleUserDelete}>
             Delete
           </button>
         </div>

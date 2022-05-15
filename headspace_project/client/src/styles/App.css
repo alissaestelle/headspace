@@ -302,74 +302,89 @@
 }
 
 .Acct-Container {
-  width: 275px;
+  width: 615px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 8.5%;
+  margin-top: 5%;
   text-align: center;
 }
 
 .Acct-Grid {
 display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: 1fr 0.75fr;
-grid-gap: 10px;
+height: 400px;
+grid-template-columns: 300px 1fr;
+grid-template-rows: 1fr 1fr;
 grid-template-areas: 
-"a"
-"b";
+"a b"
+"a c";
 
-justify-content: center;
-align-content: center;
-padding: 20px;
 background-color: rgba(238, 180, 79, 0.8);
 border-radius: 10px;
 box-shadow: 0 0 20px 5px whitesmoke;
 }
 
 #Change {
-  margin: 0;
+  grid-area: a;
+  color: whitesmoke;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  letter-spacing: 8.5px;
+  float: left;
+  padding-left: 5px;
+}
+
+#Password {
+  grid-area: c;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  float: left;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#New {
+  grid-area: b;
   color: whitesmoke;
   font-size: 1.75em;
   text-transform: uppercase;
   letter-spacing: 8.5px;
   float: right;
-  padding-right: 10px;
 }
 
-#Password {
+#Character {
+  grid-area: b;
   margin-bottom: 10px;
   color: whitesmoke;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   float: right;
-  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-right: 8.5px;
 }
 
 #Saying {
   grid-area: b;
-  margin: 0;
   color: whitesmoke;
   font-size: 1.75em;
   text-transform: uppercase;
   letter-spacing: 13.5px;
   float: right;
-  padding-right: 8.5px;
 }
 
 #Farewell {
   grid-area: b;
-  margin-bottom: 10px;
   color: whitesmoke;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   float: right;
-  padding-right: 25px;
+  padding-bottom: 5px;
+  padding-right: 8.5px;
 }
 
 .Acct-Grid form {
   grid-area: a;
-  height: 300px;
-  align-self: center;
 }
 
 .Acct-Grid input {
@@ -397,42 +412,40 @@ box-shadow: 0 0 20px 5px whitesmoke;
   text-shadow: 0 0 20px white, 0 0 30px white;
 }
 
-#Edit:hover, #Delete:hover {
+#Edit:hover, #Char-Delete:hover, #User-Delete:hover {
   cursor: pointer;
 }
 
-/* #Saying {
-  grid-area: b;
-  margin: 0;
-  color: whitesmoke;
-  font-size: 1.75em;
-  text-transform: uppercase;
-  letter-spacing: 8.5px;
-  float: left;
-} */
-
-/* #Farewell {
-  grid-area: b;
-  margin-bottom: 10px;
-  color: whitesmoke;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  float: right;
-} */
-
-
-#Delete {
+#Char-Delete {
   grid-area: b;
   display: block;
   width: 65%;
   height: 50px;
   display: block;
-  margin: auto;
+  margin-right: auto;
+  margin-left: 0;
   background-color: transparent;
   border: none;
   color: whitesmoke;
   font-family: "Space Game";
-  font-size: 3em;
+  font-size: 2.75em;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
+}
+
+#User-Delete {
+  grid-area: b;
+  display: block;
+  width: 65%;
+  height: 50px;
+  display: block;
+  margin-right: auto;
+  margin-left: 0;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  font-family: "Space Game";
+  font-size: 2.75em;
   letter-spacing: 3px;
   text-shadow: 0 0 20px white, 0 0 30px white;
 }
