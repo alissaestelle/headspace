@@ -84,12 +84,20 @@ const DeleteUser = async (req, res) => {
         id: req.params.pk
       }
     })
+    res.send({ msg: 'User Successfully Deleted', status: 'OK' })
+  } catch (e) {
+    throw e
+  }
+}
+
+const DeleteCharacter = async (req, res) => {
+  try {
     await Character.destroy({
       where: {
-        userID: req.params.pk
+        userID: req.params.userID
       }
     })
-    res.send({ msg: 'User Successfully Deleted', status: 'OK' })
+    res.send({ msg: 'Character Successfully Deleted', status: 'OK' })
   } catch (e) {
     throw e
   }
@@ -101,5 +109,6 @@ module.exports = {
   GetAchievements,
   AddAchieve,
   UpdatePassword,
-  DeleteUser
+  DeleteUser,
+  DeleteCharacter
 }

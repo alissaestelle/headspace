@@ -37,6 +37,7 @@ router.put(
   controller.UpdatePassword
 )
 
-router.delete('/deactivate/:pk', controller.DeleteUser)
+router.delete('/user/:pk', controller.DeleteUser)
+router.delete('/character/:userID', controller.DeleteCharacter)
 
 module.exports = router

@@ -24,6 +24,7 @@ function App() {
   let [payload, setPayload] = useState({})
   let [auth, toggleAuth] = useState(false)
   let [user, setUser] = useState({})
+  let [pK, setPK] = useState(0)
   let [loginSuccess, setLoginSuccess] = useState(false)
 
   let [charName, setCharName] = useState(localStorage.getItem('charName'))
@@ -111,10 +112,13 @@ function App() {
             path="/account"
             element={
               <Account
+                pK={pK}
+                setPK={setPK}
                 user={user}
                 setUser={setUser}
                 toggleAuth={toggleAuth}
                 setLoginSuccess={setLoginSuccess}
+                charID={charID}
               />
             }
           />

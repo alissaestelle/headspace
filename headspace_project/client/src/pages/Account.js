@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Client, { localHost } from '../services/API'
+import { CheckSession } from '../services/Requests'
 
-const Account = ({ user, setUser, toggleAuth, setLoginSuccess }) => {
+const Account = ({
+  pK,
+  setPK,
+  user,
+  setUser,
+  toggleAuth,
+  setLoginSuccess,
+  charID
+}) => {
   let navigate = useNavigate()
   let [changePass, setChangePass] = useState({
     oldPassword: '',
     newPassword: ''
   })
+
+  useEffect(() => {
+    const checkSession = async () => {
+      let res = await CheckSession()
+      setPK(res.id)
+    }
+    checkSession()
+  }, [])
 
   const handleChange = (e) => {
     console.log(e.target.value)
@@ -19,7 +36,7 @@ const Account = ({ user, setUser, toggleAuth, setLoginSuccess }) => {
 
   const handleUpdate = async (e) => {
     e.preventDefault()
-    await Client.put(`${localHost}/account/password/${user.id}`, changePass)
+    await Client.put(`${localHost}/account/password/${pK}`, changePass)
     setChangePass({
       oldPassword: '',
       newPassword: ''
@@ -29,7 +46,7 @@ const Account = ({ user, setUser, toggleAuth, setLoginSuccess }) => {
 
   const handleDelete = async (e) => {
     e.preventDefault()
-    await Client.delete(`${localHost}/account/deactivate/${user.id}`)
+    await Client.delete(`${localHost}/account/user/${pK}`)
     setUser({})
     toggleAuth(false)
     setLoginSuccess(false)
