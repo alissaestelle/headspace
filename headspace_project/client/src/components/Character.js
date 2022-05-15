@@ -32,9 +32,9 @@ const Character = ({
   return (
     <div className="Character">
       <div className="User-Char-Grid">
-        <h2 id="User-Char-Name">{charName}</h2>
+        <h1 id="User-Char-Name">{charName}</h1>
         <img id="User-Char-Img" src={avatar} alt={charName} />
-        <h2 id="User-Char-Level">Level: {level}</h2>
+        <h1 id="User-Char-Level">Level: {level}</h1>
       </div>
       <div className="Achieve-Container"></div>
       {achieveArr.map(

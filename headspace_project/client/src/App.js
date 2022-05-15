@@ -4,6 +4,7 @@ import { CheckSession } from './services/Requests'
 import NavBar from './components/NavBar'
 import Auth from './pages/Auth'
 import Main from './pages/Main'
+import Account from './pages/Account'
 import achievements from './achievements'
 import './styles/App.css'
 
@@ -106,6 +107,7 @@ function App() {
               />
             }
           />
+          <Route path="/account" element={<Account />} />
         </Routes>
       </main>
     </div>

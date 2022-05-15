@@ -12,8 +12,10 @@ const NavBar = ({ logOut }) => {
   return (
     <div className="Nav">
       <Link to="/" onClick={logOut}>
-        Log Out
+        | EXIT
       </Link>
+      <Link to="/account">| ACCT</Link>
+      <Link to="/main">| MAIN</Link>
     </div>
   )
 }

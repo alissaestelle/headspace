@@ -72,7 +72,7 @@ const ChooseChar = ({
   return (
     <div className="ChooseChar">
       <div className="Char-Container">
-        <h1>Choose a Character</h1>
+        <h1 id="Choose">Which One?</h1>
         <form onSubmit={submitCharOne}>
           <img
             id="Girl"

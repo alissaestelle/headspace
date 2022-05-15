@@ -21,6 +21,24 @@
   margin: 10px;
 }
 
+#User-Confirm {
+  margin: 0;
+  color: whitesmoke;
+  font-size: 4em;
+  font-family: "Space Game";
+  text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white,
+  0 0 60px whitesmoke, 0 0 70px whitesmoke, 0 0 80px white, 0 0 90px white, 0 0 100px white;
+}
+
+#Choose {
+  margin: 5%;
+  color: whitesmoke;
+  font-size: 5em;
+  font-family: "Space Game";
+  letter-spacing: 7px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
+}
+
 .Login input, .Register input {
   height: 20px;
   width: 75%;
@@ -95,18 +113,18 @@
   margin-bottom: 0;
   padding-top: 5px;
   text-align: center;
-  /* background-color: rgb(199, 238, 79); */
   background-color: rgb(199, 238, 79, 0.7);
 }
 
 .Nav a {
   text-decoration: none;
   float: right;
-  padding-top: 10px;
-  padding-right: 15px;
+  padding-top: 5px;
+  padding-right: 20px;
   color: whitesmoke;
+  text-shadow: 0 0 20px white;
   font-weight: bold;
-  font-size: 1.35em;
+  font-size: 1.65em;
 }
 
 .ChooseChar {
@@ -166,15 +184,22 @@
   height: 275px;
 }
 
-.User-Char-Grid {
-  padding-top: 2.5%;
+.Character {
   width: 300px;
-  height: 300px;
+  height: 400px;
+  padding-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.User-Char-Grid {
+  width: 300px;
+  height: 375px;
   margin: auto;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 1fr 30px;
+  grid-template-rows: 0.75fr 1fr 0.75fr;
   grid-template-areas: 
   "a" 
   "b" 
@@ -207,7 +232,7 @@
 .Achieve-Container {
   width: 300px;
   height: auto;
-  margin-top: 60px;
+  margin-top: 35px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -219,7 +244,7 @@
   margin-right: auto;
   margin-bottom: 20px;
   color: whitesmoke;
-  background-color: rgb(199, 238, 79);
+  background-color: rgba(238, 180, 79, 0.8);
   border-radius: 10px;
   box-shadow: 0 0 20px 5px whitesmoke;
 
@@ -233,7 +258,8 @@
 }
 
 .Achieve-Card:hover {
-  background: rgb(178, 236, 5);
+  background: whitesmoke;
+  color: rgba(238, 180, 79, 0.8);
 }
 
 .Achieve-Card h4 {

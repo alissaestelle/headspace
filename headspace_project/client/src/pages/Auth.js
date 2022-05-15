@@ -53,7 +53,7 @@ const Auth = ({
       <h1 id="Title">HeadSpace</h1>
       <div className="Auth-Grid">
         <div className="Login">
-          <h1>Sign In</h1>
+          <h1>Hello</h1>
           <form onSubmit={submitLogin}>
             <input
               required
@@ -75,14 +75,10 @@ const Auth = ({
         </div>
         <div className="Register">
           {loginSuccess ? (
-            <h1>
-              Registration Complete
-              <br />
-              Please Log In
-            </h1>
+            <h2 id="User-Confirm">←</h2>
           ) : (
             <div>
-              <h1>New User</h1>
+              <h1>New?</h1>
               <form onSubmit={submitRegister}>
                 <input
                   required
