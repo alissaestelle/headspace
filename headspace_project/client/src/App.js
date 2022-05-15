@@ -29,7 +29,7 @@ function App() {
   let [charName, setCharName] = useState(localStorage.getItem('charName'))
   let [avatar, setAvatar] = useState(localStorage.getItem('avatar'))
   let [level, setLevel] = useState(localStorage.getItem('level'))
-  let [stats, setStats] = useState(localStorage.getItem('stats'))
+  let [stats, setStats] = useState(JSON.parse(localStorage.getItem('stats')))
   let [achieveArr, setAchieve] = useState(achievements)
   let [updates, setUpdates] = useState(
     JSON.parse(localStorage.getItem('updates'))
@@ -107,7 +107,17 @@ function App() {
               />
             }
           />
-          <Route path="/account" element={<Account user={user} />} />
+          <Route
+            path="/account"
+            element={
+              <Account
+                user={user}
+                setUser={setUser}
+                toggleAuth={toggleAuth}
+                setLoginSuccess={setLoginSuccess}
+              />
+            }
+          />
         </Routes>
       </main>
     </div>

@@ -18,15 +18,32 @@ const Character = ({
 }) => {
   // setUpdates(localStorage.setItem(Array))
 
-  const test = (elem, idx) => {
+  const setInitArr = (elem, idx) => {
     let element = achieveArr.shift()
     console.log(element)
-    let newArr = achieveArr.filter((elem, idx) => {
+    achieveArr.filter((elem, idx) => {
       return elem !== idx
     })
-    setAchieve(newArr)
-    localStorage.setItem('updates', JSON.stringify(newArr))
-    console.log(newArr)
+    setUpdates(achieveArr)
+    localStorage.setItem('updates', JSON.stringify(achieveArr))
+    let initPoints = 0
+    initPoints = initPoints + elem.points
+    setPoints(initPoints)
+    localStorage.setItem('stats', JSON.stringify(initPoints))
+  }
+
+  const test = (elem, idx) => {
+    let element = updates.shift()
+    console.log(element)
+    updates.filter((elem, idx) => {
+      return elem !== idx
+    })
+    setUpdates(updates)
+    localStorage.setItem('updates', JSON.stringify(updates))
+    console.log(updates)
+    let totalPoints = points + elem.points
+    setPoints(totalPoints)
+    localStorage.setItem('stats', JSON.stringify(totalPoints))
   }
 
   return (
@@ -36,20 +53,35 @@ const Character = ({
         <img id="User-Char-Img" src={avatar} alt={charName} />
         <h1 id="User-Char-Level">Level: {level}</h1>
       </div>
-      <div className="Achieve-Container"></div>
-      {achieveArr.map(
-        (elem, idx) =>
-          idx < 3 && (
-            <Achievement
-              key={elem.title}
-              payload={payload}
-              title={elem.title}
-              type={elem.type}
-              points={elem.points}
-              test={() => test(elem, idx)}
-            />
-          )
-      )}
+      <div className="Achieve-Container">
+        {!updates
+          ? achieveArr.map(
+              (elem, idx) =>
+                idx < 3 && (
+                  <Achievement
+                    key={elem.title}
+                    payload={payload}
+                    title={elem.title}
+                    type={elem.type}
+                    points={elem.points}
+                    test={() => setInitArr(elem, idx)}
+                  />
+                )
+            )
+          : updates.map(
+              (elem, idx) =>
+                idx < 3 && (
+                  <Achievement
+                    key={elem.title}
+                    payload={payload}
+                    title={elem.title}
+                    type={elem.type}
+                    points={elem.points}
+                    test={() => test(elem, idx)}
+                  />
+                )
+            )}
+      </div>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Client, { localHost } from '../services/API'
 
-const Account = ({ user }) => {
+const Account = ({ user, setUser, toggleAuth, setLoginSuccess }) => {
   let navigate = useNavigate()
   let [changePass, setChangePass] = useState({
     oldPassword: '',
@@ -19,8 +19,7 @@ const Account = ({ user }) => {
 
   const handleUpdate = async (e) => {
     e.preventDefault()
-    let res = await Client.put(`${localHost}/account/password/${user.id}`)
-    console.log(res)
+    await Client.put(`${localHost}/account/password/${user.id}`, changePass)
     setChangePass({
       oldPassword: '',
       newPassword: ''
@@ -30,8 +29,11 @@ const Account = ({ user }) => {
 
   const handleDelete = async (e) => {
     e.preventDefault()
-    let res = await Client.delete(`${localHost}/account/deactivate/${user.id}`)
-    console.log(res)
+    await Client.delete(`${localHost}/account/deactivate/${user.id}`)
+    setUser({})
+    toggleAuth(false)
+    setLoginSuccess(false)
+    localStorage.clear()
     navigate('/')
   }
 

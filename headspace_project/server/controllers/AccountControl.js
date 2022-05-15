@@ -84,6 +84,11 @@ const DeleteUser = async (req, res) => {
         id: req.params.pk
       }
     })
+    await Character.destroy({
+      where: {
+        userID: req.params.pk
+      }
+    })
     res.send({ msg: 'User Successfully Deleted', status: 'OK' })
   } catch (e) {
     throw e

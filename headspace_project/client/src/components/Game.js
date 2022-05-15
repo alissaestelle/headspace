@@ -28,22 +28,42 @@ const Game = ({
   }, [])
 
   return (
-    <div className="Game">
-      <Character
-        user={user}
-        payload={payload}
-        charName={charName}
-        avatar={avatar}
-        level={level}
-        stats={stats}
-        setStats={setStats}
-        achieveArr={achieveArr}
-        setAchieve={setAchieve}
-        points={points}
-        setPoints={setPoints}
-        updates={updates}
-        setUpdates={setUpdates}
-      />
+    <div className="Game-Grid-Cont">
+      <div className="Game-Grid">
+        <div className="Info">
+          <h1>
+            Game
+            <br /> Instructions
+            <br />
+            Go
+            <br /> Here
+          </h1>
+        </div>
+        <div className="Center">
+          <Character
+            user={user}
+            payload={payload}
+            charName={charName}
+            avatar={avatar}
+            level={level}
+            stats={stats}
+            setStats={setStats}
+            achieveArr={achieveArr}
+            setAchieve={setAchieve}
+            points={points}
+            setPoints={setPoints}
+            updates={updates}
+            setUpdates={setUpdates}
+          />
+        </div>
+        <div className="Stats">
+          <h1>
+            Player
+            <br /> Stats
+            <br /> Go <br /> Here
+          </h1>
+        </div>
+      </div>
     </div>
   )
 }

@@ -133,6 +133,30 @@
   margin-right: auto;
 }
 
+.Game-Grid-Cont {
+  width: auto;
+}
+
+.Game-Grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.Info {
+  margin: 20px;
+  margin-top: 75px;
+  color: whitesmoke;
+  text-align: left;
+}
+
+.Stats {
+  margin: 20px;
+  margin-top: 75px;
+  color: whitesmoke;
+  text-align: right;
+}
+
 .Char-Container {
   width: 450px;
   height: auto;
