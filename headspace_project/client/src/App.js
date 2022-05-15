@@ -107,7 +107,7 @@ function App() {
               />
             }
           />
-          <Route path="/account" element={<Account />} />
+          <Route path="/account" element={<Account user={user} />} />
         </Routes>
       </main>
     </div>

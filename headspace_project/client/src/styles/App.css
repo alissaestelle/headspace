@@ -108,7 +108,7 @@
 
 #Title {
   font-family: 'Space Game';
-  font-size: 7em;
+  font-size: 6em;
   letter-spacing: 13px;
   margin: 0;
   text-align: center;
@@ -281,7 +281,7 @@
   width: 275px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
+  margin-top: 8.5%;
   text-align: center;
 }
 
@@ -289,20 +289,27 @@
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: 1fr 0.75fr;
+grid-gap: 10px;
 grid-template-areas: 
 "a"
 "b";
 
 justify-content: center;
 align-content: center;
+padding: 20px;
+background-color: rgba(238, 180, 79, 0.8);
+border-radius: 10px;
+box-shadow: 0 0 20px 5px whitesmoke;
 }
 
 #Change {
   margin: 0;
   color: whitesmoke;
+  font-size: 1.75em;
   text-transform: uppercase;
   letter-spacing: 8.5px;
-  float: left;
+  float: right;
+  padding-right: 10px;
 }
 
 #Password {
@@ -311,6 +318,28 @@ align-content: center;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   float: right;
+  padding-right: 15px;
+}
+
+#Saying {
+  grid-area: b;
+  margin: 0;
+  color: whitesmoke;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  letter-spacing: 13.5px;
+  float: right;
+  padding-right: 8.5px;
+}
+
+#Farewell {
+  grid-area: b;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  float: right;
+  padding-right: 25px;
 }
 
 .Acct-Grid form {
@@ -334,7 +363,7 @@ align-content: center;
   height: 50px;
   display: block;
   margin: auto;
-  margin-top: 5px;
+  margin-top: 10px;
   background-color: transparent;
   border: none;
   color: whitesmoke;
@@ -348,23 +377,24 @@ align-content: center;
   cursor: pointer;
 }
 
-#Saying {
+/* #Saying {
   grid-area: b;
   margin: 0;
   color: whitesmoke;
+  font-size: 1.75em;
   text-transform: uppercase;
   letter-spacing: 8.5px;
   float: left;
-}
+} */
 
-#Farewell {
+/* #Farewell {
   grid-area: b;
   margin-bottom: 10px;
   color: whitesmoke;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   float: right;
-}
+} */
 
 
 #Delete {

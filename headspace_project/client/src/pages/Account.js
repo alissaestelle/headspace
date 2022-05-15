@@ -1,28 +1,44 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Client, { localHost } from '../services/API'
 
-const Account = () => {
-  let [password, setPassword] = useState({
+const Account = ({ user }) => {
+  let navigate = useNavigate()
+  let [changePass, setChangePass] = useState({
     oldPassword: '',
     newPassword: ''
   })
 
   const handleChange = (e) => {
-    setPassword({
-      ...password,
-      name: e.target.value
+    console.log(e.target.value)
+    setChangePass({
+      ...changePass,
+      [e.target.name]: e.target.value
     })
   }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const res = await Client.put(`${localHost}/account/password/${}`)
-  // }
+  const handleUpdate = async (e) => {
+    e.preventDefault()
+    let res = await Client.put(`${localHost}/account/password/${user.id}`)
+    console.log(res)
+    setChangePass({
+      oldPassword: '',
+      newPassword: ''
+    })
+    navigate('/')
+  }
+
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    let res = await Client.delete(`${localHost}/account/deactivate/${user.id}`)
+    console.log(res)
+    navigate('/')
+  }
 
   return (
     <div className="Acct-Container">
       <div className="Acct-Grid">
-        <form onSubmit="">
+        <form onSubmit={handleUpdate}>
           <h1>
             <span id="Change">Change</span> <span id="Password">Password</span>
           </h1>
@@ -30,14 +46,16 @@ const Account = () => {
             required
             type="password"
             placeholder="Old Password"
-            value={password.oldPassword}
+            name="oldPassword"
+            value={changePass.oldPassword}
             onChange={handleChange}
           ></input>
           <input
             required
             type="password"
             placeholder="New Password"
-            value={password.newPassword}
+            name="newPassword"
+            value={changePass.newPassword}
             onChange={handleChange}
           ></input>
           <button id="Edit">Submit</button>
@@ -47,7 +65,9 @@ const Account = () => {
             <span id="Saying">Saying</span>
             <span id="Farewell">Farewell?</span>
           </h1>
-          <button id="Delete">Delete</button>
+          <button id="Delete" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </div>
