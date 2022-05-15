@@ -35,14 +35,21 @@
   height: 30px;
   display: block;
   margin: auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border: 1px solid gray;
-  border-radius: 15px;
-  color: rgb(0, 0, 0, 0.7);
-  font-family: Arial;
-  font-size: medium;
+  margin-bottom: 10%;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  font-size: 4em;
+  font-family: "Space Game";
+  text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white,
+  0 0 60px whitesmoke, 0 0 70px whitesmoke, 0 0 80px white, 0 0 90px white, 0 0 100px white;
 }
+
+.Login button:hover, .Register button:hover {
+  color: whitesmoke;
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #b5fcc9, 0 0 40px #b5fcc9, 0 0 50px #b5fcc9,
+  0 0 60px #b5c8fc, 0 0 70px #b5c8fc, 0 0 80px #b5c8fc;
+  }
 
 .Login {
   border-radius: 20px 0 0 20px;
@@ -72,6 +79,7 @@
 
 .Auth-Grid {
   width: 500px;
+  height: 365px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
