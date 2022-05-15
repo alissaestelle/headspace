@@ -56,6 +56,15 @@ export const GetAchievements = async () => {
   }
 }
 
+export const AddAchieve = async (data) => {
+  try {
+    const res = await Client.post('/account/achievement', data)
+    return res.data
+  } catch (e) {
+    throw e
+  }
+}
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')

@@ -42,6 +42,21 @@ const GetAchievements = async (req, res) => {
   }
 }
 
+const AddAchieve = async (req, res) => {
+  try {
+    await Character.findOne({
+      where: {
+        id: req.params.charID
+      }
+    })
+    let achievement = await Achievement.create({ ...req.body })
+    console.log(achievement)
+    res.send(achievement)
+  } catch (e) {
+    throw e
+  }
+}
+
 const UpdatePassword = async (req, res) => {
   try {
     let user = await User.findByPk(req.params.pk)
@@ -79,6 +94,7 @@ module.exports = {
   CreateCharacter,
   GetCharacter,
   GetAchievements,
+  AddAchieve,
   UpdatePassword,
   DeleteUser
 }

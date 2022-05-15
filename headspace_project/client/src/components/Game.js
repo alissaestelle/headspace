@@ -4,8 +4,8 @@ import { useEffect } from 'react'
 import Character from './Character'
 
 const Game = ({
-  payload,
   user,
+  payload,
   charID,
   charName,
   avatar,
@@ -30,6 +30,7 @@ const Game = ({
   return (
     <div className="Game">
       <Character
+        user={user}
         payload={payload}
         charName={charName}
         avatar={avatar}

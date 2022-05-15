@@ -1,15 +1,6 @@
-import { useState } from 'react'
-
-const Achievement = ({ payload, title, type, points, testWin }) => {
-  // let [newAchieve, setNewAchieve] = useState({
-  //   characterID: payload.character.id,
-  //   title: title,
-  //   type: type,
-  //   points: points
-  // })
-
+const Achievement = ({ payload, title, type, points, test }) => {
   return (
-    <div className="Achieve-Card" onClick={testWin}>
+    <div className="Achieve-Card" onClick={test}>
       <h4>{title}</h4>
       <h3>{points}</h3>
     </div>

@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
-import { GetAchievements } from '../services/Requests'
+import { useEffect } from 'react'
 import Achievement from './Achievement'
 
 const Character = ({
+  user,
   payload,
   charName,
   avatar,
+  level,
   stats,
   setStats,
-  level,
   achieveArr,
   setAchieve,
   points,
@@ -16,34 +16,17 @@ const Character = ({
   updates,
   setUpdates
 }) => {
-  // let [updates, setUpdates] = useState(achievements)
-  // let [achievement, toggleAchievement] = useState(false)
+  // setUpdates(localStorage.setItem(Array))
 
-  // useEffect(() => {
-  //   const getAchievements = async () => {
-  //     let results = await GetAchievements()
-  //     setAchieve(results)
-  //     console.log(results)
-  //     localStorage.getItem('status')
-  //   }
-  //   getAchievements()
-  // }, [])
-
-  // useEffect(() => {
-  //   let test = localStorage.getItem('newArr')
-  //   setAchieve(test)
-  // }, [achieveArr])
-
-  const testWin = (idx) => {
+  const test = (elem, idx) => {
     let element = achieveArr.shift()
     console.log(element)
     let newArr = achieveArr.filter((elem, idx) => {
       return elem !== idx
     })
     setAchieve(newArr)
-    localStorage.setItem('newArr', JSON.stringify(newArr))
+    localStorage.setItem('updates', JSON.stringify(newArr))
     console.log(newArr)
-    // getUpdates()
   }
 
   return (
@@ -63,7 +46,7 @@ const Character = ({
               title={elem.title}
               type={elem.type}
               points={elem.points}
-              testWin={() => testWin(idx)}
+              test={() => test(elem, idx)}
             />
           )
       )}

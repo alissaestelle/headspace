@@ -30,7 +30,9 @@ function App() {
   let [level, setLevel] = useState(localStorage.getItem('level'))
   let [stats, setStats] = useState(localStorage.getItem('stats'))
   let [achieveArr, setAchieve] = useState(achievements)
-  let [updates, setUpdates] = useState(localStorage.getItem('updates'))
+  let [updates, setUpdates] = useState(
+    JSON.parse(localStorage.getItem('updates'))
+  )
   let [points, setPoints] = useState(0)
 
   const checkToken = async () => {
@@ -84,8 +86,8 @@ function App() {
             path="/main"
             element={
               <Main
-                payload={payload}
                 user={user}
+                payload={payload}
                 charID={charID}
                 charName={charName}
                 setCharName={setCharName}

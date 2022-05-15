@@ -1,26 +1,79 @@
 .App {
   height: 100vh;
-}
-
-.Login div {
-  display: inline;
-  width: 400px;
-}
-
-.Login input {
-  display: block;
-}
-
-.Main {
-  height: 100vh;
-  /* background-color: #ffcc99; */
   background-image: url('https://imgur.com/Iypt07Y.png');
   background-size: cover;
   background-position: bottom;
+}
+
+ .Login, .Register {
+  width: 200px;
+  background-color: rgb(199, 238, 79, 0.5);
+  padding: 15px;
+}
+
+.Login h1, .Register h1 {
+  color: whitesmoke;
+  margin: 10px;
+}
+
+.Login input, .Register input {
+  height: 20px;
+  width: 75%;
+  margin: 1.5%;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid gray;
+}
+
+.Login button, .Register button {
+  width: 50%;
+  height: 30px;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 1px solid gray;
+  border-radius: 15px;
+  color: rgb(0, 0, 0, 0.7);
+  font-family: Arial;
+  font-size: medium;
+}
+
+.Login {
+  border-radius: 20px 0 0 20px;
+}
+
+.Register {
+  border-radius: 0 20px 20px 0;
+}
+
+.Auth-Container {
+  width: 450px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Auth-Grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding-top: 25%;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* .Main { */
+  /* height: 100vh; */
+  /* background-color: #ffcc99; */
+  /* background-image: url('https://imgur.com/Iypt07Y.png');
+  background-size: cover;
+  background-position: bottom; */
   /* background-repeat: repeat-x;
   width: calc(100% * 3);
   animation: slide 60s linear infinite; */
-}
+/* } */
 
 @keyframes slide {
   0% {
@@ -37,13 +90,25 @@
   margin-bottom: 0;
   padding-top: 5px;
   text-align: center;
-  background-color: rgb(199, 238, 79);
+  /* background-color: rgb(199, 238, 79); */
+  background-color: rgb(199, 238, 79, 0.7);
+}
+
+.Nav a {
+  text-decoration: none;
+  float: right;
+  padding-top: 10px;
+  padding-right: 15px;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.35em;
 }
 
 .Char-Container {
   width: 450px;
   height: 300px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,10 +118,33 @@
 .Char-Container h1 {
   grid-column: span 2;
   text-align: center;
+  color: whitesmoke;
 }
 
 .Char-Container form {
   text-align: center;
+}
+
+.Char-Container input {
+  height: 15px;
+  width: 60%;
+  margin: 1.5%;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid gray;
+}
+
+.Char-Container button {
+  width: 30%;
+  height: 30px;
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  color: rgb(0, 0, 0, 0.7);
+  font-family: Arial;
+  font-size: medium;
 }
 
 #Girl {

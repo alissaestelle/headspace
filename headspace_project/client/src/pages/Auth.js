@@ -49,67 +49,71 @@ const Auth = ({
   }
 
   return (
-    <div className="Login">
-      <div>
-        <h3>Sign In</h3>
-        <form onSubmit={submitLogin}>
-          <input
-            required
-            placeholder="Username"
-            name="username"
-            value={returnUser.username}
-            onChange={handleLogin}
-          ></input>
-          <input
-            required
-            placeholder="Password"
-            name="password"
-            value={returnUser.password}
-            onChange={handleLogin}
-          ></input>
-          <button>Submit</button>
-        </form>
-      </div>
-      {loginSuccess ? (
-        <div>
-          <h3>Registration Complete. Please Log In.</h3>
-        </div>
-      ) : (
-        <div>
-          <h3>New User</h3>
-          <form onSubmit={submitRegister}>
-            <input
-              required
-              placeholder="First Name"
-              name="firstName"
-              value={newUser.firstName}
-              onChange={handleRegister}
-            ></input>
-            <input
-              required
-              placeholder="Last Name"
-              name="lastName"
-              value={newUser.lastName}
-              onChange={handleRegister}
-            ></input>
+    <div className="Auth-Container">
+      <div className="Auth-Grid">
+        <div className="Login">
+          <h1>Sign In</h1>
+          <form onSubmit={submitLogin}>
             <input
               required
               placeholder="Username"
               name="username"
-              value={newUser.username}
-              onChange={handleRegister}
+              value={returnUser.username}
+              onChange={handleLogin}
             ></input>
             <input
               required
+              type="password"
               placeholder="Password"
               name="password"
-              value={newUser.password}
-              onChange={handleRegister}
+              value={returnUser.password}
+              onChange={handleLogin}
             ></input>
             <button>Submit</button>
           </form>
         </div>
-      )}
+        <div className="Register">
+          {loginSuccess ? (
+            <h1>Registration Complete. Please Log In.</h1>
+          ) : (
+            <div>
+              <h1>New User</h1>
+              <form onSubmit={submitRegister}>
+                <input
+                  required
+                  placeholder="First Name"
+                  name="firstName"
+                  value={newUser.firstName}
+                  onChange={handleRegister}
+                ></input>
+                <input
+                  required
+                  placeholder="Last Name"
+                  name="lastName"
+                  value={newUser.lastName}
+                  onChange={handleRegister}
+                ></input>
+                <input
+                  required
+                  placeholder="Username"
+                  name="username"
+                  value={newUser.username}
+                  onChange={handleRegister}
+                ></input>
+                <input
+                  required
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={newUser.password}
+                  onChange={handleRegister}
+                ></input>
+                <button>Submit</button>
+              </form>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }

@@ -3,8 +3,8 @@ import ChooseChar from '../components/ChooseChar'
 import Game from '../components/Game'
 
 const Main = ({
-  payload,
   user,
+  payload,
   charID,
   charName,
   setCharName,
@@ -50,8 +50,8 @@ const Main = ({
         />
       ) : (
         <Game
-          payload={payload}
           user={user}
+          payload={payload}
           charID={charID}
           charName={charName}
           avatar={avatar}

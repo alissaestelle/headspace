@@ -23,6 +23,13 @@ router.get(
   controller.GetAchievements
 )
 
+router.post(
+  '/achievement/:charID',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.AddAchieve
+)
+
 router.put(
   '/password/:pk',
   middleware.stripToken,
