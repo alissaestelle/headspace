@@ -20,6 +20,15 @@ const getUsers = async () => {
   stringify(users)
 }
 
+const getUser = async () => {
+  let user = await User.findOne({
+    where: {
+      id: 84
+    }
+  })
+  stringify(user)
+}
+
 const getCharacters = async () => {
   let characters = await Character.findAll()
   stringify(characters)
@@ -42,19 +51,30 @@ const deleteUser = async () => {
 const deleteChar = async () => {
   let user = await Character.destroy({
     where: {
-      name: 'JB'
+      name: 'Alissa'
     }
   })
   stringify(user)
 }
 
+const deleteAchieve = async () => {
+  let achieve = await Achievement.destroy({
+    where: {
+      characterID: 109
+    }
+  })
+  stringify(achieve)
+}
+
 async function main() {
   try {
-    // await deleteUser()
-    // await deleteChar()
+    // await getUser()
+    await deleteUser()
+    await deleteChar()
     await getUsers()
-    await getCharacters()
-    // await getAchievements()
+    // await getCharacters()
+    // await deleteAchieve()
+    await getAchievements()
   } catch (error) {
     console.log(error)
   } finally {

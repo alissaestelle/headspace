@@ -35,6 +35,11 @@ function App() {
   let [updates, setUpdates] = useState(
     JSON.parse(localStorage.getItem('updates'))
   )
+  let [aTitle, setTitle] = useState(JSON.parse(localStorage.getItem('aTitle')))
+  let [aType, setType] = useState(JSON.parse(localStorage.getItem('aType')))
+  let [aPoints, storePoints] = useState(
+    JSON.parse(localStorage.getItem('aPoints'))
+  )
   let [points, setPoints] = useState(0)
 
   const checkToken = async () => {
@@ -58,6 +63,7 @@ function App() {
 
   const handleLogOut = () => {
     setUser({})
+    setPayload({})
     toggleAuth(false)
     setLoginSuccess(false)
     localStorage.clear()
@@ -88,8 +94,8 @@ function App() {
             path="/main"
             element={
               <Main
-                user={user}
                 payload={payload}
+                setUser={setUser}
                 charID={charID}
                 charName={charName}
                 setCharName={setCharName}
@@ -100,11 +106,16 @@ function App() {
                 stats={stats}
                 setStats={setStats}
                 achieveArr={achieveArr}
-                setAchieve={setAchieve}
                 points={points}
                 setPoints={setPoints}
                 updates={updates}
                 setUpdates={setUpdates}
+                aTitle={aTitle}
+                setTitle={setTitle}
+                aType={aType}
+                setType={setType}
+                aPoints={aPoints}
+                storePoints={storePoints}
               />
             }
           />

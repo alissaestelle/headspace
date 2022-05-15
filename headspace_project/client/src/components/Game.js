@@ -1,11 +1,11 @@
 import Client from '../services/API'
 import { localHost } from '../services/API'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Character from './Character'
+import { CheckSession } from '../services/Requests'
+import Stats from './Stats'
 
 const Game = ({
-  user,
-  payload,
   charID,
   charName,
   avatar,
@@ -13,19 +13,33 @@ const Game = ({
   stats,
   setStats,
   achieveArr,
-  setAchieve,
   points,
   setPoints,
   updates,
-  setUpdates
+  setUpdates,
+  aTitle,
+  setTitle,
+  aType,
+  setType,
+  aPoints,
+  storePoints
 }) => {
-  useEffect(() => {
-    const getCharacter = async () => {
-      let res = await Client.get(`${localHost}/account/character/${charID}`)
-      console.log(res.data)
-    }
-    getCharacter()
-  }, [])
+  // useEffect(() => {
+  //   const getCharacter = async () => {
+  //     let character = await Client.get(
+  //       `${localHost}/account/character/${charID}`
+  //     )
+  //     console.log(character.data)
+  //   }
+  //   getCharacter()
+  // }, [])
+
+  let [achievement, setAchievement] = useState({
+    characterID: '',
+    title: '',
+    type: '',
+    points: 0
+  })
 
   return (
     <div className="Game-Grid-Cont">
@@ -41,27 +55,29 @@ const Game = ({
         </div>
         <div className="Center">
           <Character
-            user={user}
-            payload={payload}
+            charID={charID}
             charName={charName}
             avatar={avatar}
             level={level}
             stats={stats}
             setStats={setStats}
             achieveArr={achieveArr}
-            setAchieve={setAchieve}
+            achievement={achievement}
+            setAchievement={setAchievement}
             points={points}
             setPoints={setPoints}
             updates={updates}
             setUpdates={setUpdates}
+            aTitle={aTitle}
+            setTitle={setTitle}
+            aType={aType}
+            setType={setType}
+            aPoints={aPoints}
+            storePoints={storePoints}
           />
         </div>
         <div className="Stats">
-          <h1>
-            Player
-            <br /> Stats
-            <br /> Go <br /> Here
-          </h1>
+          <Stats achievement={achievement} setAchievement={setAchievement} />
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ router.get(
 )
 
 router.post(
-  '/achievement/:charID',
+  '/achievement',
   middleware.stripToken,
   middleware.verifyToken,
   controller.AddAchieve

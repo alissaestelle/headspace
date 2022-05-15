@@ -3,8 +3,8 @@ import ChooseChar from '../components/ChooseChar'
 import Game from '../components/Game'
 
 const Main = ({
-  user,
   payload,
+  setUser,
   charID,
   charName,
   setCharName,
@@ -15,11 +15,16 @@ const Main = ({
   stats,
   setStats,
   achieveArr,
-  setAchieve,
   points,
   setPoints,
   updates,
-  setUpdates
+  setUpdates,
+  aTitle,
+  setTitle,
+  aType,
+  setType,
+  aPoints,
+  storePoints
 }) => {
   let [character1, setCharacter1] = useState({
     userID: payload.id,
@@ -40,6 +45,7 @@ const Main = ({
       {!charName ? (
         <ChooseChar
           payload={payload}
+          setUser={setUser}
           char1={character1}
           setChar1={setCharacter1}
           char2={character2}
@@ -50,8 +56,7 @@ const Main = ({
         />
       ) : (
         <Game
-          user={user}
-          payload={payload}
+          setUser={setUser}
           charID={charID}
           charName={charName}
           avatar={avatar}
@@ -59,11 +64,16 @@ const Main = ({
           stats={stats}
           setStats={setStats}
           achieveArr={achieveArr}
-          setAchieve={setAchieve}
           points={points}
           setPoints={setPoints}
           updates={updates}
           setUpdates={setUpdates}
+          aTitle={aTitle}
+          setTitle={setTitle}
+          aType={aType}
+          setType={setType}
+          aPoints={aPoints}
+          storePoints={storePoints}
         />
       )}
     </div>

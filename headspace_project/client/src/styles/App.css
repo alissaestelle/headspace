@@ -3,7 +3,7 @@
   src: url('../fonts/SpaceGame-ywxX2.ttf');
 }
 
-.App {
+.App, .App main {
   height: 100vh;
   background-image: url('https://imgur.com/Iypt07Y.png');
   background-size: cover;
@@ -105,6 +105,8 @@
   font-weight: bold;
   font-size: 1.65em;
 }
+
+
 
 #Title {
   font-family: 'Space Game';

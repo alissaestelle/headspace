@@ -46,7 +46,7 @@ const AddAchieve = async (req, res) => {
   try {
     await Character.findOne({
       where: {
-        id: req.params.charID
+        id: req.body.characterID
       }
     })
     let achievement = await Achievement.create({ ...req.body })

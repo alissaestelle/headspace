@@ -1,50 +1,98 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { AddAchieve } from '../services/Requests'
 import Achievement from './Achievement'
+import Stats from './Stats'
 
 const Character = ({
-  user,
-  payload,
+  charID,
   charName,
   avatar,
   level,
   stats,
   setStats,
   achieveArr,
-  setAchieve,
+  achievement,
+  setAchievement,
   points,
   setPoints,
   updates,
-  setUpdates
+  setUpdates,
+  aTitle,
+  setTitle,
+  aType,
+  setType,
+  aPoints,
+  storePoints
 }) => {
-  // setUpdates(localStorage.setItem(Array))
+  let [clicked, toggleClicked] = useState(false)
 
   const setInitArr = (elem, idx) => {
     let element = achieveArr.shift()
-    console.log(element)
+    setAchievement({
+      ...achievement,
+      characterID: charID,
+      title: element.title,
+      type: element.type,
+      points: element.points
+    })
+    console.log(aTitle)
+    console.log(aType)
+    console.log(aPoints)
+    setTitle(element.title)
+    setType(element.type)
+    storePoints(element.points)
     achieveArr.filter((elem, idx) => {
       return elem !== idx
     })
     setUpdates(achieveArr)
-    localStorage.setItem('updates', JSON.stringify(achieveArr))
     let initPoints = 0
     initPoints = initPoints + elem.points
     setPoints(initPoints)
+
+    localStorage.setItem('updates', JSON.stringify(achieveArr))
+    localStorage.setItem('aTitle', JSON.stringify(element.title))
+    localStorage.setItem('aType', JSON.stringify(element.type))
+    localStorage.setItem('aPoints', JSON.stringify(element.points))
     localStorage.setItem('stats', JSON.stringify(initPoints))
+
+    toggleClicked(true)
   }
 
   const test = (elem, idx) => {
     let element = updates.shift()
-    console.log(element)
+    setAchievement({
+      ...achievement,
+      characterID: charID,
+      title: element.title,
+      type: element.type,
+      points: element.points
+    })
+
+    setTitle(element.title)
+    setType(element.type)
+    storePoints(element.points)
+
     updates.filter((elem, idx) => {
       return elem !== idx
     })
+
     setUpdates(updates)
-    localStorage.setItem('updates', JSON.stringify(updates))
-    console.log(updates)
     let totalPoints = points + elem.points
     setPoints(totalPoints)
+
+    localStorage.setItem('updates', JSON.stringify(updates))
+    localStorage.setItem('aTitle', JSON.stringify(element.title))
+    localStorage.setItem('aType', JSON.stringify(element.type))
+    localStorage.setItem('aPoints', JSON.stringify(element.points))
     localStorage.setItem('stats', JSON.stringify(totalPoints))
+
+    toggleClicked(true)
   }
+
+  // const submitAchieve = async (e) => {
+  //   e.preventDefault()
+  //   let achievement = {}
+  // }
 
   return (
     <div className="Character">
@@ -60,11 +108,10 @@ const Character = ({
                 idx < 3 && (
                   <Achievement
                     key={elem.title}
-                    payload={payload}
                     title={elem.title}
                     type={elem.type}
                     points={elem.points}
-                    test={() => setInitArr(elem, idx)}
+                    setInitArr={() => setInitArr(elem, idx)}
                   />
                 )
             )
@@ -73,14 +120,21 @@ const Character = ({
                 idx < 3 && (
                   <Achievement
                     key={elem.title}
-                    payload={payload}
                     title={elem.title}
                     type={elem.type}
                     points={elem.points}
-                    test={() => test(elem, idx)}
+                    setInitArr={() => test(elem, idx)}
                   />
                 )
             )}
+      </div>
+      <div className="Stats">
+        <Stats
+          achievement={achievement}
+          setTitle={setTitle}
+          setType={setType}
+          storePoints={storePoints}
+        />
       </div>
     </div>
   )
