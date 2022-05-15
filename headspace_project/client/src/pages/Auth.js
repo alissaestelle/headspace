@@ -50,6 +50,7 @@ const Auth = ({
 
   return (
     <div className="Auth-Container">
+      <h1 id="Title">HeadSpace</h1>
       <div className="Auth-Grid">
         <div className="Login">
           <h1>Sign In</h1>
@@ -69,12 +70,16 @@ const Auth = ({
               value={returnUser.password}
               onChange={handleLogin}
             ></input>
-            <button>Submit</button>
+            <button>→</button>
           </form>
         </div>
         <div className="Register">
           {loginSuccess ? (
-            <h1>Registration Complete. Please Log In.</h1>
+            <h1>
+              Registration Complete
+              <br />
+              Please Log In
+            </h1>
           ) : (
             <div>
               <h1>New User</h1>
@@ -108,7 +113,7 @@ const Auth = ({
                   value={newUser.password}
                   onChange={handleRegister}
                 ></input>
-                <button>Submit</button>
+                <button>→</button>
               </form>
             </div>
           )}

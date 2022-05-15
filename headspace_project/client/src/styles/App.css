@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Space Game';
+  src: url('../fonts/SpaceGame-ywxX2.ttf');
+}
+
 .App {
   height: 100vh;
   background-image: url('https://imgur.com/Iypt07Y.png');
@@ -5,10 +10,10 @@
   background-position: bottom;
 }
 
- .Login, .Register {
+.Login, .Register {
   width: 200px;
   background-color: rgb(199, 238, 79, 0.5);
-  padding: 15px;
+  padding: 25px;
 }
 
 .Login h1, .Register h1 {
@@ -47,41 +52,33 @@
   border-radius: 0 20px 20px 0;
 }
 
+#Title {
+  font-family: 'Space Game';
+  font-size: 7em;
+  letter-spacing: 13px;
+  margin: 0;
+  text-align: center;
+  padding-top: 10%;
+  color: whitesmoke;
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #fb79ba, 0 0 50px #ff7f4d,
+  0 0 60px #ff7f4d, 0 0 70px #ff7f4d, 0 0 80px #ff7f4d;
+}
+
 .Auth-Container {
-  width: 450px;
-  height: 450px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .Auth-Grid {
+  width: 500px;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  padding-top: 25%;
+  padding-top: 5%;
   justify-content: center;
   text-align: center;
-}
-
-
-/* .Main { */
-  /* height: 100vh; */
-  /* background-color: #ffcc99; */
-  /* background-image: url('https://imgur.com/Iypt07Y.png');
-  background-size: cover;
-  background-position: bottom; */
-  /* background-repeat: repeat-x;
-  width: calc(100% * 3);
-  animation: slide 60s linear infinite; */
-/* } */
-
-@keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0)
-  }
-  100% {
-    transform: translate3d(-1310px, 0, 0)
-  }
 }
 
 .Nav {
@@ -104,14 +101,18 @@
   font-size: 1.35em;
 }
 
-.Char-Container {
-  width: 450px;
-  height: 300px;
+.ChooseChar {
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.Char-Container {
+  width: 450px;
+  height: auto;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.75fr 0.75fr;
   grid-template-rows: 0.25fr 1fr;
 }
 
