@@ -21,24 +21,6 @@
   margin: 10px;
 }
 
-#User-Confirm {
-  margin: 0;
-  color: whitesmoke;
-  font-size: 4em;
-  font-family: "Space Game";
-  text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white,
-  0 0 60px whitesmoke, 0 0 70px whitesmoke, 0 0 80px white, 0 0 90px white, 0 0 100px white;
-}
-
-#Choose {
-  margin: 5%;
-  color: whitesmoke;
-  font-size: 5em;
-  font-family: "Space Game";
-  letter-spacing: 7px;
-  text-shadow: 0 0 20px white, 0 0 30px white;
-}
-
 .Login input, .Register input {
   height: 20px;
   width: 75%;
@@ -77,18 +59,6 @@
   border-radius: 0 20px 20px 0;
 }
 
-#Title {
-  font-family: 'Space Game';
-  font-size: 7em;
-  letter-spacing: 13px;
-  margin: 0;
-  text-align: center;
-  padding-top: 10%;
-  color: whitesmoke;
-  text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #fb79ba, 0 0 50px #ff7f4d,
-  0 0 60px #ff7f4d, 0 0 70px #ff7f4d, 0 0 80px #ff7f4d;
-}
-
 .Auth-Container {
   width: 600px;
   margin-left: auto;
@@ -105,6 +75,15 @@
   padding-top: 5%;
   justify-content: center;
   text-align: center;
+}
+
+#User-Confirm {
+  margin: 0;
+  color: whitesmoke;
+  font-size: 4em;
+  font-family: "Space Game";
+  text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white,
+  0 0 60px whitesmoke, 0 0 70px whitesmoke, 0 0 80px white, 0 0 90px white, 0 0 100px white;
 }
 
 .Nav {
@@ -125,6 +104,27 @@
   text-shadow: 0 0 20px white;
   font-weight: bold;
   font-size: 1.65em;
+}
+
+#Title {
+  font-family: 'Space Game';
+  font-size: 7em;
+  letter-spacing: 13px;
+  margin: 0;
+  text-align: center;
+  padding-top: 10%;
+  color: whitesmoke;
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #fb79ba, 0 0 50px #ff7f4d,
+  0 0 60px #ff7f4d, 0 0 70px #ff7f4d, 0 0 80px #ff7f4d;
+}
+
+#Choose {
+  margin: 5%;
+  color: whitesmoke;
+  font-size: 5em;
+  font-family: "Space Game";
+  letter-spacing: 7px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
 }
 
 .ChooseChar {
@@ -187,7 +187,7 @@
 .Character {
   width: 300px;
   height: 400px;
-  padding-top: 5%;
+  padding-top: 25px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -211,7 +211,7 @@
 #User-Char-Name {
   grid-area: a;
   color: whitesmoke;
-  margin: 0;
+  margin: 5px;
 }
 
 #User-Char-Img {
@@ -226,7 +226,7 @@
 #User-Char-Level {
   grid-area: c;
   color: whitesmoke;
-  margin: 0;
+  margin: 5px;
 }
 
 .Achieve-Container {
@@ -275,6 +275,112 @@
   align-self: center;
   justify-self: end;
   padding-right: 20px;
+}
+
+.Acct-Container {
+  width: 275px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.Acct-Grid {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr 0.75fr;
+grid-template-areas: 
+"a"
+"b";
+
+justify-content: center;
+align-content: center;
+}
+
+#Change {
+  margin: 0;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 8.5px;
+  float: left;
+}
+
+#Password {
+  margin-bottom: 10px;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  float: right;
+}
+
+.Acct-Grid form {
+  grid-area: a;
+  height: 300px;
+  align-self: center;
+}
+
+.Acct-Grid input {
+  height: 20px;
+  width: 65%;
+  margin: 1.5%;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid gray;
+}
+
+#Edit {
+  display: block;
+  width: 65%;
+  height: 50px;
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  font-family: "Space Game";
+  font-size: 3em;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
+}
+
+#Edit:hover, #Delete:hover {
+  cursor: pointer;
+}
+
+#Saying {
+  grid-area: b;
+  margin: 0;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 8.5px;
+  float: left;
+}
+
+#Farewell {
+  grid-area: b;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  float: right;
+}
+
+
+#Delete {
+  grid-area: b;
+  display: block;
+  width: 65%;
+  height: 50px;
+  display: block;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  font-family: "Space Game";
+  font-size: 3em;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
 }
 
 /* @media only screen and (max-width: 900px) {
