@@ -4,10 +4,10 @@ import Client, { localHost } from '../services/API'
 import { CheckSession } from '../services/Requests'
 
 const Account = ({
+  setUser,
+  setPayload,
   pK,
   setPK,
-  user,
-  setUser,
   toggleAuth,
   setLoginSuccess,
   charID
@@ -48,6 +48,8 @@ const Account = ({
     e.preventDefault()
     await Client.delete(`${localHost}/account/user/${pK}`)
     setUser({})
+    setPayload({})
+    setPK(0)
     toggleAuth(false)
     setLoginSuccess(false)
     localStorage.clear()

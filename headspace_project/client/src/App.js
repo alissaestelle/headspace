@@ -112,10 +112,11 @@ function App() {
             path="/account"
             element={
               <Account
-                pK={pK}
-                setPK={setPK}
                 user={user}
                 setUser={setUser}
+                setPayload={setPayload}
+                pK={pK}
+                setPK={setPK}
                 toggleAuth={toggleAuth}
                 setLoginSuccess={setLoginSuccess}
                 charID={charID}

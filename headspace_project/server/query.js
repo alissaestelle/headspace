@@ -33,7 +33,7 @@ const getAchievements = async () => {
 const deleteUser = async () => {
   let user = await User.destroy({
     where: {
-      firstName: 'Eight'
+      firstName: 'Alissa'
     }
   })
   stringify(user)
@@ -42,7 +42,7 @@ const deleteUser = async () => {
 const deleteChar = async () => {
   let user = await Character.destroy({
     where: {
-      name: 'Harmony'
+      name: 'JB'
     }
   })
   stringify(user)
@@ -50,7 +50,7 @@ const deleteChar = async () => {
 
 async function main() {
   try {
-    await deleteUser()
+    // await deleteUser()
     // await deleteChar()
     await getUsers()
     await getCharacters()
