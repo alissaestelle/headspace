@@ -229,6 +229,27 @@
   height: 275px;
 }
 
+#Girl-Select, #Boy-Select {
+  width: 50%;
+  height: 30px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10%;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  font-size: 4em;
+  font-family: "Space Game";
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #5cf988, 0 0 40px #5cf988, 0 0 50px #5cf988,
+  0 0 60px #678efa, 0 0 70px #678efa, 0 0 80px #678efa;
+}
+
+#Girl-Select:hover, #Boy-Select:hover {
+  text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white,
+  0 0 60px whitesmoke, 0 0 70px whitesmoke, 0 0 80px white, 0 0 90px white, 0 0 100px white;
+}
+
+
 .Character {
   width: 300px;
   height: 400px;

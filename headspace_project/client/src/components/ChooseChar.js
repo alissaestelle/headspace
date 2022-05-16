@@ -86,7 +86,7 @@ const ChooseChar = ({
             onChange={handleCharOne}
           ></input>
           <br />
-          <button id="Girl-Select">Select</button>
+          <button id="Girl-Select">→</button>
         </form>
         <form onSubmit={submitCharTwo}>
           <img
@@ -101,7 +101,7 @@ const ChooseChar = ({
             onChange={handleCharTwo}
           ></input>
           <br />
-          <button id="Boy-Select">Select</button>
+          <button id="Boy-Select">→</button>
         </form>
       </div>
     </div>
