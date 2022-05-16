@@ -1,8 +1,5 @@
-import Client from '../services/API'
-import { localHost } from '../services/API'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Character from './Character'
-import { CheckSession } from '../services/Requests'
 import Stats from './Stats'
 
 const Game = ({
@@ -90,7 +87,13 @@ const Game = ({
           />
         </div>
         <div className="Right">
-          <Stats charID={charID} aType={aType} level={level} />
+          <Stats
+            charID={charID}
+            aType={aType}
+            level={level}
+            stats={stats}
+            points={points}
+          />
         </div>
       </div>
     </div>

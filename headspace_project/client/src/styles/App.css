@@ -179,7 +179,7 @@
 }
 
 .Stats {
-  height: 40%;
+  height: 50%;
   margin: 20px;
   margin-top: 75px;
   color: whitesmoke;
@@ -201,7 +201,7 @@
   clear: both;
   font-size: 1.5em;
   letter-spacing: 5px;
-  text-shadow: 0 0 20px white, 0 0 30px white;
+  text-shadow: 0 0 20px white;
 }
 
 .Char-Container {
@@ -288,7 +288,7 @@
 
   display: grid;
   grid-template-columns: 300px;
-  grid-template-rows: 75px 275px 75px;
+  grid-template-rows: 75px 275px 85px;
   grid-template-areas: 
   "a" 
   "b" 
@@ -317,27 +317,43 @@
 }
 
 #Score {
+  display: inline;
   grid-area: c;
   color: whitesmoke;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
   margin-right: auto;
-  padding-left: 15px;
   padding-top: 25px;
   font-family: "Space Game";
   font-size: 3em;
+  font-weight: bold;
   letter-spacing: 7px;
-  text-shadow: 0 0 20px white, 0 0 30px white;
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #b46cbc, 0 0 40px #b46cbc, 0 0 50px #b46cbc,
+  0 0 60px #4c79f5, 0 0 70px #4c79f5, 0 0 80px #4c79f5;
 }
 
-#Points {
+#Points-Display {
+  display: inline;
+  font-family: "Space Game";
+  margin-right: 0;
+  margin-left: auto;
+  color: whitesmoke;
+  font-size: 3em;
+  font-weight: bold;
+  padding-left: 50px;
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #b46cbc, 0 0 40px #b46cbc, 0 0 50px #b46cbc,
+  0 0 60px #4c79f5, 0 0 70px #4c79f5, 0 0 80px #4c79f5;
+}
+
+/* #Points {
+  display: inline;
   margin-right: 0;
   margin-left: auto;
   padding-left: 50px;
-  text-shadow: 0 0 20px #eeeeee, 0 0 30px #622cc5, 0 0 40px #622cc5, 0 0 50px #622cc5,
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #b46cbc, 0 0 40px #b46cbc, 0 0 50px #b46cbc,
   0 0 60px #4c79f5, 0 0 70px #4c79f5, 0 0 80px #4c79f5;
-}
+} */
 
 .Achieve-Container {
   grid-area: c;
@@ -359,7 +375,6 @@
   background-color: rgba(238, 180, 79, 0.8);
   border-radius: 10px;
   box-shadow: 0 0 20px 5px whitesmoke;
-
 
   display: grid;
   grid-template-columns: 1fr 0.25fr;

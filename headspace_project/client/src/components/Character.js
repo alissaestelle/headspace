@@ -1,30 +1,21 @@
-import { useState, useEffect } from 'react'
-import { AddAchieve } from '../services/Requests'
+import { useState } from 'react'
 import Achievement from './Achievement'
-import Stats from './Stats'
 
 const Character = ({
   charID,
   charName,
   avatar,
-  level,
   stats,
-  setStats,
   achieveArr,
   achievement,
   setAchievement,
   points,
   setPoints,
   updates,
-  setUpdates,
-  aTitle,
-  setTitle,
-  aType,
-  setType,
-  aPoints,
-  storePoints
+  setUpdates
 }) => {
   let [display, setDisplay] = useState(0)
+  let [levelCount, setLevelCount] = useState(0)
 
   const setInitArr = (elem, idx) => {
     let element = achieveArr.shift()
@@ -42,6 +33,7 @@ const Character = ({
     let initPoints = 0
     initPoints = initPoints + elem.points
     setPoints(initPoints)
+    setLevelCount(levelCount + 1)
 
     localStorage.setItem('updates', JSON.stringify(achieveArr))
     localStorage.setItem('aTitle', JSON.stringify(element.title))
@@ -68,6 +60,8 @@ const Character = ({
     setUpdates(updates)
     let totalPoints = points + elem.points
     setPoints(totalPoints)
+    setLevelCount(levelCount + 1)
+    console.log(levelCount)
 
     localStorage.setItem('updates', JSON.stringify(updates))
     localStorage.setItem('aTitle', JSON.stringify(element.title))
@@ -76,19 +70,15 @@ const Character = ({
     localStorage.setItem('stats', JSON.stringify(totalPoints))
   }
 
-  // const submitAchieve = async (e) => {
-  //   e.preventDefault()
-  //   let achievement = {}
-  // }
-
   return (
     <div className="Character">
       <div className="User-Char-Grid">
         <h1 id="User-Char-Name">{charName}</h1>
         <img id="User-Char-Img" src={avatar} alt={charName} />
-        <h2 id="Score">
-          Score: <span id="Points">{!updates ? points : stats + points}</span>
-        </h2>
+        <p>
+          <span id="Score">Score:</span>
+          <span id="Points-Display">{!updates ? points : stats + points}</span>
+        </p>
       </div>
       <div className="Achieve-Container">
         {!updates
