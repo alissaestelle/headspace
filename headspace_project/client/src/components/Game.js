@@ -45,13 +45,21 @@ const Game = ({
     <div className="Game-Grid-Cont">
       <div className="Game-Grid">
         <div className="Left">
-          <h1>
-            Game
-            <br /> Instructions
+          <h1>Guide</h1>
+          <p>
+            1. If the opportunity to complete an achievement has passed, no
+            worries! Wait until tomorrow.
             <br />
-            Go
-            <br /> Here
-          </h1>
+            <br />
+            2. Google any techniques or terms you're unsure about.
+            <br />
+            <br />
+            3. Substitute any specifics with personal preferences if needed:
+            <br />
+            <br />
+            Ex: The achievement prompt involves a scent but you're allergic?
+            Swap the provided scent with one that works better.
+          </p>
         </div>
         <div className="Center">
           <Character
