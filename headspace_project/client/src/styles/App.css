@@ -179,7 +179,8 @@
 }
 
 .Stats {
-  height: 50%;
+  height: 45%;
+  width: 75%;
   margin: 20px;
   margin-top: 75px;
   color: whitesmoke;
