@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { AddAchieve } from '../services/Requests'
+import ScoreBar from './ScoreBar'
 
 const Stats = ({ achievement }) => {
   // useEffect(() => {
@@ -9,7 +10,11 @@ const Stats = ({ achievement }) => {
   //   }
   //   storeAchieve()
   // }, [])
-  return <div></div>
+  return (
+    <div>
+      <ScoreBar />
+    </div>
+  )
 }
 
 export default Stats

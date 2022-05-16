@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { AddAchieve } from '../services/Requests'
 import Achievement from './Achievement'
 import Stats from './Stats'
+import ScoreBar from './ScoreBar'
 
 const Character = ({
   charID,
@@ -99,7 +100,7 @@ const Character = ({
       <div className="User-Char-Grid">
         <h1 id="User-Char-Name">{charName}</h1>
         <img id="User-Char-Img" src={avatar} alt={charName} />
-        <h1 id="User-Char-Level">Level: {level}</h1>
+        <ScoreBar />
       </div>
       <div className="Achieve-Container">
         {!updates
