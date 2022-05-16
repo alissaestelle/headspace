@@ -3,11 +3,12 @@
   src: url('../fonts/SpaceGame-ywxX2.ttf');
 }
 
-.App, .App main {
+#root {
   height: 100vh;
   background-image: url('https://imgur.com/Iypt07Y.png');
+  background-position: center;
   background-size: cover;
-  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .Login, .Register {
@@ -106,8 +107,6 @@
   font-size: 1.65em;
 }
 
-
-
 #Title {
   font-family: 'Space Game';
   font-size: 6em;
@@ -137,9 +136,11 @@
 
 .Game-Grid-Cont {
   width: auto;
+  height: auto;
 }
 
 .Game-Grid {
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -213,19 +214,17 @@
 .Character {
   width: 300px;
   height: 400px;
-  padding-top: 25px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .User-Char-Grid {
   width: 300px;
-  height: 375px;
-  margin: auto;
+  height: 400px;
 
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.75fr 1fr 0.75fr;
+  grid-template-columns: 300px;
+  grid-template-rows: 75px 275px 75px;
   grid-template-areas: 
   "a" 
   "b" 
@@ -238,24 +237,47 @@
   grid-area: a;
   color: whitesmoke;
   margin: 5px;
+  font-family: "Space Game";
+  font-size: 3em;
+  letter-spacing: 7px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
 }
 
 #User-Char-Img {
   grid-area: b;
   width: 275px;
   height: 275px;
-  padding-left: 10px;
+
   padding-bottom: 5px;
   align-self: center;
 }
 
-#User-Char-Level {
+#Score {
   grid-area: c;
   color: whitesmoke;
-  margin: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-top: 25px;
+  font-family: "Space Game";
+  font-size: 3em;
+  letter-spacing: 7px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
+}
+
+#Points {
+  margin-right: 0;
+  margin-left: auto;
+  padding-left: 50px;
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #78f69b, 0 0 40px #78f69b, 0 0 50px #78f69b,
+  0 0 60px #7fa0fa, 0 0 70px #7fa0fa, 0 0 80px #7fa0fa;
 }
 
 .Achieve-Container {
+  grid-area: c;
+  align-self: center;
   width: 300px;
   height: auto;
   margin-top: 35px;

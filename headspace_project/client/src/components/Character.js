@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { AddAchieve } from '../services/Requests'
 import Achievement from './Achievement'
 import Stats from './Stats'
-import ScoreBar from './ScoreBar'
 
 const Character = ({
   charID,
@@ -25,7 +24,7 @@ const Character = ({
   aPoints,
   storePoints
 }) => {
-  let [clicked, toggleClicked] = useState(false)
+  let [display, setDisplay] = useState(0)
 
   const setInitArr = (elem, idx) => {
     let element = achieveArr.shift()
@@ -36,12 +35,6 @@ const Character = ({
       type: element.type,
       points: element.points
     })
-    console.log(aTitle)
-    console.log(aType)
-    console.log(aPoints)
-    setTitle(element.title)
-    setType(element.type)
-    storePoints(element.points)
     achieveArr.filter((elem, idx) => {
       return elem !== idx
     })
@@ -55,8 +48,7 @@ const Character = ({
     localStorage.setItem('aType', JSON.stringify(element.type))
     localStorage.setItem('aPoints', JSON.stringify(element.points))
     localStorage.setItem('stats', JSON.stringify(initPoints))
-
-    toggleClicked(true)
+    setDisplay(localStorage.getItem(JSON.parse(stats)))
   }
 
   const test = (elem, idx) => {
@@ -86,8 +78,6 @@ const Character = ({
     localStorage.setItem('aType', JSON.stringify(element.type))
     localStorage.setItem('aPoints', JSON.stringify(element.points))
     localStorage.setItem('stats', JSON.stringify(totalPoints))
-
-    toggleClicked(true)
   }
 
   // const submitAchieve = async (e) => {
@@ -100,7 +90,9 @@ const Character = ({
       <div className="User-Char-Grid">
         <h1 id="User-Char-Name">{charName}</h1>
         <img id="User-Char-Img" src={avatar} alt={charName} />
-        <ScoreBar />
+        <h2 id="Score">
+          Score: <span id="Points">{!updates ? points : stats + points}</span>
+        </h2>
       </div>
       <div className="Achieve-Container">
         {!updates
