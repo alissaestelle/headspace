@@ -249,7 +249,6 @@
   0 0 60px whitesmoke, 0 0 70px whitesmoke, 0 0 80px white, 0 0 90px white, 0 0 100px white;
 }
 
-
 .Character {
   width: 300px;
   height: 400px;
@@ -310,8 +309,8 @@
   margin-right: 0;
   margin-left: auto;
   padding-left: 50px;
-  text-shadow: 0 0 20px #eeeeee, 0 0 30px #78f69b, 0 0 40px #78f69b, 0 0 50px #78f69b,
-  0 0 60px #7fa0fa, 0 0 70px #7fa0fa, 0 0 80px #7fa0fa;
+  text-shadow: 0 0 20px #eeeeee, 0 0 30px #2cc557, 0 0 40px #2cc557, 0 0 50px #2cc557,
+  0 0 60px #4c79f5, 0 0 70px #4c79f5, 0 0 80px #4c79f5;
 }
 
 .Achieve-Container {
