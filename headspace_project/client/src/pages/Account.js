@@ -81,21 +81,12 @@ const Account = ({
           ></input>
           <button id="Edit">Submit</button>
         </form>
-        <div className="Delete-Char">
-          <h1>
-            <span id="New">Change</span>
-            <span id="Character">Character</span>
-          </h1>
-          <button id="Char-Delete" onClick="">
-            Delete
-          </button>
-        </div>
         <div className="Delete-User">
           <h1>
             <span id="Saying">Saying</span>
             <span id="Farewell">Farewell?</span>
           </h1>
-          <button id="User-Delete" onClick={handleUserDelete}>
+          <button id="Delete" onClick={handleUserDelete}>
             Delete
           </button>
         </div>
