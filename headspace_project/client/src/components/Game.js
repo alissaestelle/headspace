@@ -44,7 +44,7 @@ const Game = ({
   return (
     <div className="Game-Grid-Cont">
       <div className="Game-Grid">
-        <div className="Info">
+        <div className="Left">
           <h1>
             Game
             <br /> Instructions
@@ -76,8 +76,8 @@ const Game = ({
             storePoints={storePoints}
           />
         </div>
-        <div className="Stats">
-          <Stats achievement={achievement} setAchievement={setAchievement} />
+        <div className="Right">
+          <Stats charID={charID} aType={aType} level={level} />
         </div>
       </div>
     </div>

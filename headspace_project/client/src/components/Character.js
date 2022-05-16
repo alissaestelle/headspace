@@ -61,10 +61,6 @@ const Character = ({
       points: element.points
     })
 
-    setTitle(element.title)
-    setType(element.type)
-    storePoints(element.points)
-
     updates.filter((elem, idx) => {
       return elem !== idx
     })
@@ -120,14 +116,6 @@ const Character = ({
                   />
                 )
             )}
-      </div>
-      <div className="Stats">
-        <Stats
-          achievement={achievement}
-          setTitle={setTitle}
-          setType={setType}
-          storePoints={storePoints}
-        />
       </div>
     </div>
   )

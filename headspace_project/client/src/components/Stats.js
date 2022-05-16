@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { AddAchieve } from '../services/Requests'
 
-const Stats = ({ achievement }) => {
+const Stats = ({ charID, level, aType }) => {
   // useEffect(() => {
   //   const storeAchieve = async () => {
   //     let res = await AddAchieve(achievement)
@@ -9,7 +9,15 @@ const Stats = ({ achievement }) => {
   //   }
   //   storeAchieve()
   // }, [])
-  return <div></div>
+  return (
+    <div className="Stats">
+      <h4>
+        <span id="charID">ID: {charID}</span>
+      </h4>
+      <h2>Level: {level}</h2>
+      <h2>{aType}</h2>
+    </div>
+  )
 }
 
 export default Stats
