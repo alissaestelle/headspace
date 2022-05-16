@@ -11,9 +11,9 @@ const Stats = ({ charID, level, aType }) => {
   // }, [])
   return (
     <div className="Stats">
-      <h4>
+      <h2>
         <span id="charID">ID: {charID}</span>
-      </h4>
+      </h2>
       <h2>Level: {level}</h2>
       <h2>{aType}</h2>
     </div>
