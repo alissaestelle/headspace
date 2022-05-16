@@ -146,7 +146,7 @@
 }
 
 .Left {
-  height: 75%;
+  height: 85%;
   margin: 20px;
   margin-top: 75px;
   color: whitesmoke;
@@ -154,6 +154,28 @@
   background-color: rgba(120, 189, 232, 0.6);
   border-radius: 10px;
   padding: 10px;
+}
+
+#Guide {
+  margin: 10px;
+  font-family: "Space Game";
+  font-size: 2.5em;
+  letter-spacing: 5px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
+}
+
+.Numbers {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#Ex {
+  margin: 5px;
+  font-family: "Space Game";
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-shadow: 0 0 20px white, 0 0 30px white;
 }
 
 .Stats {
